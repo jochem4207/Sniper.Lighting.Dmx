@@ -9,11 +9,13 @@ using FT_HANDLE = System.UInt32;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Runtime.ExceptionServices;
+using Sniper.Lighting.DMX.Display;
 
 namespace Sniper.Lighting.DMX
 {
     public class DMXProUSB
     {
+        protected List<IDisplayDmx> DisplayControls;
         protected byte[] buffer;
         protected int busLength;
         protected Dictionary<Guid, QueueBuffer> queueBuffers;
@@ -138,9 +140,27 @@ namespace Sniper.Lighting.DMX
             {
                 lock (startLock)
                 {
+                    byte value = 0;
+                    for (int channel = 0; channel < buffer.Length; channel++)
+                    {
+                        value = 0;
+                        if (limits != null)
+                        {
+                            if (value < limits.Min[channel])
+                                value = limits.Min[channel];
+                        }
+                        //initial state of channel is set here
+                        SetDmxValue(channel, value, Guid.Empty,1);
+                    }
+
+                    writeDMXBUfferThread = new Thread(new ThreadStart(writeDMXBuffer));
+                    writeDMXBUfferThread.IsBackground = true;
+                    done = false;
+                    writeDMXBUfferThread.Start();
+
                     if (!Connected)
                     {
-                        
+
                         handle = 0;
                         if (FTDI_OpenDevice(0, ref status))
                         {
@@ -148,23 +168,7 @@ namespace Sniper.Lighting.DMX
                             {
                                 // FT_Open OK, use ftHandle to access device 
                                 Connected = true;
-                                byte value = 0;
-                                for (int channel = 0; channel < buffer.Length; channel++)
-                                {
-                                    value = 0;
-                                    if (limits != null)
-                                    {
-                                        if (value < limits.Min[channel])
-                                            value = limits.Min[channel];
-                                    }
-                                    //initial state of channel is set here
-                                    SetDmxValue(channel, value, Guid.Empty, 1);
-                                }
 
-                                writeDMXBUfferThread = new Thread(new ThreadStart(writeDMXBuffer));
-                                writeDMXBUfferThread.IsBackground = true;
-                                done = false;
-                                writeDMXBUfferThread.Start();
 
                                 return true;
                             }
@@ -397,6 +401,16 @@ namespace Sniper.Lighting.DMX
                 try
                 {
                     newData = BuildBufferFromQueues();
+                    if (this.DisplayControls.Count > 0)
+                    {
+                        if (newData)
+                        {
+                            foreach (IDisplayDmx var in DisplayControls)
+                            {
+                                var.SendDMX(buffer);
+                            }
+                        }
+                    }
                     if (Connected)
                     {
                         if (newData)
@@ -411,13 +425,14 @@ namespace Sniper.Lighting.DMX
 
                         System.Threading.Thread.Sleep(25);
                     }
-                    else
+                    if (this.DisplayControls.Count == 0 && !Connected)
                     {
                         System.Threading.Thread.Sleep(1000);
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    Console.Write(ex.Message);
                     break;
                 }
             }
