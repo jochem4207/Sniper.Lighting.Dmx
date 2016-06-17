@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SniperUsbDmx
 {
-    public static class Extensions
+    public static class BufferExtensions
     {
 
         public static QueueBuffer[] CopyQueueBuffersToArray(this Dictionary<Guid, IQueueBuffer> queueBuffers)

@@ -294,8 +294,8 @@ namespace SniperUsbDmx
             byte[] oldBuffer = GetLiveBuffer();
 
             //copy the buffers to an array (fixed length) for sorting & merge - so we can unlock the dictionary sooner
-            IQueueBuffer[] queueBuffers = this.queueBuffers.CopyQueueBuffersToArray();
-            byte[] newBuffer = queueBuffers.MergeQueueBuffers(busLength);
+            QueueBuffer[] arrayBuffers = this.queueBuffers.CopyQueueBuffersToArray();
+            byte[] newBuffer = arrayBuffers.MergeQueueBuffers(busLength);
             this.newData= oldBuffer.CompareBuffers(newBuffer);
            
             if (newData)

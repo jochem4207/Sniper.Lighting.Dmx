@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Display\DmxDisplayGeneric.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Display\DmxDisplayGeneric.Designer.cs">
+      <DependentUpon>DmxDisplayGeneric.cs</DependentUpon>
+    </Compile>
     <Compile Include="Display\IDisplayDmx.cs" />
     <Compile Include="DMXControllerInstance.cs" />
     <Compile Include="DmxLimits.cs" />
@@ -56,7 +62,7 @@
     <Compile Include="Effects\EffectEventArgs.cs" />
     <Compile Include="Effects\Effect.cs" />
     <Compile Include="DmxController.cs" />
-    <Compile Include="Extensions.cs" />
+    <Compile Include="BufferExtensions.cs" />
     <Compile Include="Inputs\IQueueBuffer.cs" />
     <Compile Include="Effects\MathHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,6 +88,11 @@
     <Content Include="ftd2xx.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Display\DmxDisplayGeneric.resx">
+      <DependentUpon>DmxDisplayGeneric.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
