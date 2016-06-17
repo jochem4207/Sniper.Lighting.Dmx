@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="Display\IDisplayDmx.cs" />
     <Compile Include="DMXControllerInstance.cs" />
-    <Compile Include="DMXDeviceType.cs" />
     <Compile Include="DmxLimits.cs" />
     <Compile Include="DMXProUSB.cs">
       <SubType>Code</SubType>

@@ -10,6 +10,32 @@ namespace SniperUsbDmx
 
 
 
+        public static bool CompareBuffers(this byte[] oldBuffer, byte[] newBuffer)
+        {
+
+            for (int channel = 0; channel < oldBuffer.Length; channel++)
+            {
+                if (oldBuffer[channel] != newBuffer[channel])
+                {
+                    return true;
+
+                }
+            }
+            return false;
+        }
+        public static bool CompareBuffers(this byte?[] oldBuffer, byte?[] newBuffer)
+        {
+
+            for (int channel = 0; channel < oldBuffer.Length; channel++)
+            {
+                if (oldBuffer[channel] != newBuffer[channel])
+                {
+                    return true;
+
+                }
+            }
+            return false;
+        }
 
 
 

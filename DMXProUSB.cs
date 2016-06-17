@@ -296,9 +296,9 @@ namespace SniperUsbDmx
             //copy the buffers to an array (fixed length) for sorting & merge - so we can unlock the dictionary sooner
             IQueueBuffer[] queueBuffers = CopyQueueBuffersToArray();
             byte[] newBuffer = MergeQueueBuffers(queueBuffers);
-
-            bool bufferChanged = CompareBuffers(oldBuffer, newBuffer);
-            if (bufferChanged)
+            this.newData= oldBuffer.CompareBuffers(newBuffer);
+           
+            if (newData)
             {
                 newBuffer.CopyTo(buffer, 0);
 
@@ -310,36 +310,10 @@ namespace SniperUsbDmx
                     });
                 }
             }
-            return bufferChanged;
+            return this.newData;
         }
-        private bool CompareBuffers(byte[] oldBuffer, byte[] newBuffer)
-        {
-            bool bufferChanged = false;
-            for (int channel = 0; channel < busLength; channel++)
-            {
-                if (oldBuffer[channel] != newBuffer[channel])
-                {
-                    bufferChanged = true;
-                    newData = true;
-                    break;
-                }
-            }
-            return bufferChanged;
-        }
-        private bool CompareBuffers(byte?[] oldBuffer, byte?[] newBuffer)
-        {
-            bool bufferChanged = false;
-            for (int channel = 0; channel < busLength; channel++)
-            {
-                if (oldBuffer[channel] != newBuffer[channel])
-                {
-                    bufferChanged = true;
-                    newData = true;
-                    break;
-                }
-            }
-            return bufferChanged;
-        }
+
+      
 
         private byte[] MergeQueueBuffers(IQueueBuffer[] buffers)
         {
