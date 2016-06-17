@@ -158,7 +158,7 @@ namespace Sniper.Lighting.DMX
             dmxDevice.Dispose();
         }
 
-        public static byte[] GetCurrentValues()
+        public static byte?[] GetCurrentValues()
         {
             return dmxDevice.GetCurrentBuffer();
         }

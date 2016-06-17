@@ -218,7 +218,7 @@ namespace Sniper.Lighting.DMX
             }
             return 0;
         }
-        private byte[] GetBufferForQueue(Guid queue, int priority)
+        private byte?[] GetBufferForQueue(Guid queue, int priority)
         {
             QueueBuffer queueBuffer = null;
             lock (queueBuffers)
@@ -227,7 +227,7 @@ namespace Sniper.Lighting.DMX
                 {
                     queueBuffer = queueBuffers[queue];
                     queueBuffer.CurrentPriority = priority;
-                    return queueBuffer.Buffer;
+                    return queueBuffer.Buffer();
                 }
             }
             return null;
@@ -284,11 +284,11 @@ namespace Sniper.Lighting.DMX
 
         protected bool BuildBufferFromQueues()
         {
-            byte[] oldBuffer = GetCurrentBuffer();
+            byte?[] oldBuffer = GetCurrentBuffer();
 
             //copy the buffers to an array (fixed length) for sorting & merge - so we can unlock the dictionary sooner
             QueueBuffer[] queueBuffers = CopyQueueBuffersToArray();
-            byte[] newBuffer = MergeQueueBuffers(queueBuffers);
+            byte?[] newBuffer = MergeQueueBuffers(queueBuffers);
 
             bool bufferChanged = CompareBuffers(oldBuffer, newBuffer);
             if (bufferChanged)
@@ -306,7 +306,7 @@ namespace Sniper.Lighting.DMX
             return bufferChanged;
         }
 
-        private bool CompareBuffers(byte[] oldBuffer, byte[] newBuffer)
+        private bool CompareBuffers(byte?[] oldBuffer, byte?[] newBuffer)
         {
             bool bufferChanged = false;
             for (int channel = 0; channel < busLength; channel++)
@@ -321,16 +321,16 @@ namespace Sniper.Lighting.DMX
             return bufferChanged;
         }
 
-        private byte[] MergeQueueBuffers(QueueBuffer[] buffers)
+        private byte?[] MergeQueueBuffers(QueueBuffer[] buffers)
         {
-            byte[] newBuffer = new byte[busLength];
+            byte?[] newBuffer = new byte?[busLength];
             IOrderedEnumerable<QueueBuffer> orderedBuffers = buffers.OrderBy(queueBuffer => queueBuffer.CurrentPriority);
             foreach (var queueBuffer in orderedBuffers)
             {
-                byte[] queueBufferBuffer = queueBuffer.Buffer;
+                byte?[] queueBufferBuffer = queueBuffer.Buffer();
                 for (int channel = 0; channel < busLength; channel++)
                 {
-                    byte value = queueBufferBuffer[channel];
+                    byte? value = queueBufferBuffer[channel];
                     newBuffer[channel] = value;
                 }
             }
@@ -356,7 +356,7 @@ namespace Sniper.Lighting.DMX
         public void SetDmxValue(int channel, byte value, Guid queue, int priority)
         {
             //using the queue id, get the buffer
-            byte[] queueBuffer = GetBufferForQueue(queue, priority);
+            byte?[] queueBuffer = GetBufferForQueue(queue, priority);
             if (queueBuffer != null) //if queue is defined
             {
                 if (channel < queueBuffer.Length)
@@ -384,9 +384,9 @@ namespace Sniper.Lighting.DMX
             }
         }
 
-        public byte[] GetCurrentBuffer()
+        public byte?[] GetCurrentBuffer()
         {
-            return (byte[])buffer.Clone();
+            return (byte?[])buffer.Clone();
         }
 
         protected bool newData = false;

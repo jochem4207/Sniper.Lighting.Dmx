@@ -44,17 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Display\IDisplayDmx.cs" />
     <Compile Include="DMXControllerInstance.cs" />
     <Compile Include="DMXDeviceType.cs" />
     <Compile Include="DmxLimits.cs" />
     <Compile Include="DMXProUSB.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Easing.cs" />
-    <Compile Include="EasingExtents.cs" />
-    <Compile Include="EasingType.cs" />
-    <Compile Include="EffectEventArgs.cs" />
-    <Compile Include="Effect.cs" />
+    <Compile Include="Effects\Easing.cs" />
+    <Compile Include="Effects\EasingExtents.cs" />
+    <Compile Include="Effects\EasingType.cs" />
+    <Compile Include="Effects\EffectEventArgs.cs" />
+    <Compile Include="Effects\Effect.cs" />
     <Compile Include="DmxController.cs" />
     <Compile Include="MathHelper.cs" />
     <Compile Include="OpenDMXUSB.cs" />
@@ -64,7 +65,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Pulse.cs" />
+    <Compile Include="Effects\Pulse.cs" />
     <Compile Include="QueueBuffer.cs" />
     <Compile Include="StateChangedEventArgs.cs" />
     <Compile Include="StateChangedEventHandler.cs" />

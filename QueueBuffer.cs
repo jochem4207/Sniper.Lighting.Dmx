@@ -5,23 +5,35 @@ using System.Text;
 
 namespace Sniper.Lighting.DMX
 {
-    public class QueueBuffer
+    public interface IQueueBuffer
+    {
+        int Priority();
+       
+         byte?[] Buffer();
+    }
+    public class QueueBuffer:IQueueBuffer
     {
         public QueueBuffer(int BusLength)
         {
             CurrentPriority = 1;
-            Buffer = new byte[BusLength];
+            HardBuffer = new byte?[BusLength];
         }
-        public int CurrentPriority
+
+        public int CurrentPriority { get;  set; }
+
+
+        public byte?[] HardBuffer
         {
             get;
             set;
         }
-    
-        public byte[] Buffer
+      public  int Priority()
         {
-            get;
-            set;
+            return this.CurrentPriority;
+        }
+       public byte?[] Buffer()
+        {
+            return this.HardBuffer;
         }
     }
 }
