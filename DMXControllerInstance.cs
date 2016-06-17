@@ -15,9 +15,9 @@ namespace SniperUsbDmx
         private DMXProUSB dmxDevice;
         private const int busLength = 512;
 
-        public DmxControllerInstance(DMXDeviceType dmxDeviceType)
+        public DmxControllerInstance()
         {
-            dmxDevice = dmxDeviceType == DMXDeviceType.OpenDMX ? new OpenDMXUSB() : new DMXProUSB();
+            dmxDevice =  new DMXProUSB();
             done = false;
             for (int i = 0; i < busLength; i++)
             {
