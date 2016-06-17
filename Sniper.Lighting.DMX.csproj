@@ -82,16 +82,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="D:\Work Files\RedBull\Sniper.SkatePark.Automation.Common\Sniper.SkatePark.Automation.Common.csproj">
-      <Project>{512A3A39-611C-4E01-8934-7351D6D4B17B}</Project>
-      <Name>Sniper.SkatePark.Automation.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Sniper.Common\Sniper.Common.csproj">
-      <Project>{A347A543-6075-4B24-B5C4-DABABE2E63FD}</Project>
-      <Name>Sniper.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

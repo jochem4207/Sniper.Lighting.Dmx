@@ -19,7 +19,7 @@ namespace Sniper.Lighting.DMX
         protected Dictionary<Guid, QueueBuffer> queueBuffers;
         protected uint handle;
         protected bool done = false;
-        private int bytesWritten = 0;
+        
         protected FT_STATUS status;
 
         protected const byte BITS_8 = 8;
@@ -479,11 +479,11 @@ namespace Sniper.Lighting.DMX
             uint[] temp = new uint[4];
             uint version = 0;
             uint major_ver, minor_ver, build_ver;
-            int recvd = 0;
+            //int recvd = 0;
             byte[] singleBuff = new byte[1];
-            int size = 0;
+            //int size = 0;
             bool res = false;
-            int tries = 0;
+            //int tries = 0;
             byte latencyTimer = (byte)0;
             int BreakTime;
             int MABTime;
@@ -613,7 +613,7 @@ namespace Sniper.Lighting.DMX
          **/
         void FTDI_ClosePort()
         {
-            if (handle != null)
+            //if (handle != null)
                 FT_Close(handle);
         }
 
@@ -728,7 +728,7 @@ namespace Sniper.Lighting.DMX
             if (Connected)
             {
                 int bytes_written = 0;
-                int size = 0;
+                //int size = 0;
                 // Form Packet Header
                 byte[] header = GetProHeader(label, data.Length);
                 byte[] footer = new byte[1] { DMX_END_CODE };

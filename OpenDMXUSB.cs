@@ -80,20 +80,20 @@ namespace Sniper.Lighting.DMX
 
             uint RTimeout = 120;
             uint WTimeout = 100;
-            int VersionMSB = 0;
-            int VersionLSB = 0;
+            //int VersionMSB = 0;
+            //int VersionLSB = 0;
             uint[] temp = new uint[4];
             uint version = 0;
             uint major_ver, minor_ver, build_ver;
-            int recvd = 0;
+            //int recvd = 0;
             byte[] singleBuff = new byte[1];
-            int size = 0;
+            //int size = 0;
             bool res = false;
-            int tries = 0;
+            //int tries = 0;
             byte latencyTimer = (byte)0;
-            int BreakTime;
-            int MABTime;
-            DMXUSBPROParamsType PRO_Params;
+           // int BreakTime;
+            //int MABTime;
+            //DMXUSBPROParamsType PRO_Params;
             // Try at least 3 times 
             StartCounter++;
             Console.WriteLine("\n------ D2XX ------- Opening [Device {0}] ------ Try {1}", device_num, StartCounter);
