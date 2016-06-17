@@ -8,16 +8,16 @@ namespace SniperUsbDmx
     public static class Extensions
     {
 
-        public static IQueueBuffer[] CopyQueueBuffersToArray(Dictionary<Guid, IQueueBuffer> queueBuffers)
+        public static QueueBuffer[] CopyQueueBuffersToArray(this Dictionary<Guid, IQueueBuffer> queueBuffers)
         {
-            IQueueBuffer[] buffers = null;
+            QueueBuffer[] buffers = null;
 
             var queueCount = queueBuffers.Count;
-            buffers = new IQueueBuffer[queueCount];
+            buffers = new QueueBuffer[queueCount];
             int index = 0;
             foreach (IQueueBuffer queueBuffer in queueBuffers.Values)
             {
-                buffers[index++] = queueBuffer;
+                buffers[index++] = new QueueBuffer() { CurrentPriority = queueBuffer.Priority, HardBuffer = queueBuffer.Buffer() };
             }
 
             return buffers;
@@ -27,7 +27,7 @@ namespace SniperUsbDmx
         {
             byte[] finalBuffer = new byte[busLength];
             byte?[] newBuffer = new byte?[busLength];
-            IOrderedEnumerable<IQueueBuffer> orderedBuffers = buffers.OrderBy(queueBuffer => queueBuffer.Priority());
+            IOrderedEnumerable<IQueueBuffer> orderedBuffers = buffers.OrderBy(queueBuffer => queueBuffer.Priority);
             foreach (var queueBuffer in orderedBuffers)
             {
                 byte?[] queueBufferBuffer = queueBuffer.Buffer();

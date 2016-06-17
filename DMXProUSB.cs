@@ -18,7 +18,7 @@ namespace SniperUsbDmx
         protected List<IDisplayDmx> DisplayControls;
         protected byte[] buffer;
         protected int busLength;
-        protected Dictionary<Guid, QueueBuffer> queueBuffers;
+        protected Dictionary<Guid, IQueueBuffer> queueBuffers;
         protected uint handle;
         protected bool done = false;
         
@@ -119,7 +119,7 @@ namespace SniperUsbDmx
             {
                 buffer = new byte[busLength]; // can be any length up to 512. The shorter the faster.
             }
-            queueBuffers = new Dictionary<Guid, QueueBuffer>();
+            queueBuffers = new Dictionary<Guid, IQueueBuffer>();
         }
 
         protected DmxLimits limits;
@@ -222,29 +222,29 @@ namespace SniperUsbDmx
             }
             return 0;
         }
-        private byte?[] GetBufferForQueue(Guid queue, int priority)
+        private byte?[] GetBufferForQueue(Guid queue)
         {
-            QueueBuffer queueBuffer = null;
+            IQueueBuffer queueBuffer = null;
             lock (queueBuffers)
             {
                 if (queueBuffers.ContainsKey(queue))
                 {
                     queueBuffer = queueBuffers[queue];
-                    queueBuffer.CurrentPriority = priority;
+                    
                     return queueBuffer.Buffer();
                 }
             }
             return null;
         }
-        public QueueBuffer CreateQueue(Guid queue, int priority)
+        public IQueueBuffer CreateQueue(Guid queue, int priority)
         {
             lock (queueBuffers)
             {
-                QueueBuffer queueBuffer = null;
+                IQueueBuffer queueBuffer = null;
                 if (!queueBuffers.ContainsKey(queue))
                 {
-                    queueBuffer = new QueueBuffer(busLength);
-                    queueBuffer.CurrentPriority = priority;
+                    queueBuffer = new QueueBuffer(busLength) { CurrentPriority = priority };
+
                     queueBuffers.Add(queue, queueBuffer);
                 }
                 else
@@ -257,13 +257,13 @@ namespace SniperUsbDmx
 
         public void ChangeQueuePriority(Guid queue, int priority)
         {
-            QueueBuffer queueBuffer = null;
+            IQueueBuffer queueBuffer = null;
             lock (queueBuffers)
             {
                 if (queueBuffers.ContainsKey(queue))
                 {
                     queueBuffer = queueBuffers[queue];
-                    queueBuffer.CurrentPriority = priority;
+                    queueBuffer.Priority = priority;
                 }
             }
         }
@@ -294,7 +294,7 @@ namespace SniperUsbDmx
             byte[] oldBuffer = GetLiveBuffer();
 
             //copy the buffers to an array (fixed length) for sorting & merge - so we can unlock the dictionary sooner
-            IQueueBuffer[] queueBuffers = CopyQueueBuffersToArray();
+            IQueueBuffer[] queueBuffers = this.queueBuffers.CopyQueueBuffersToArray();
             byte[] newBuffer = queueBuffers.MergeQueueBuffers(busLength);
             this.newData= oldBuffer.CompareBuffers(newBuffer);
            
@@ -313,30 +313,11 @@ namespace SniperUsbDmx
             return this.newData;
         }
 
-      
-
-        private QueueBuffer[] CopyQueueBuffersToArray()
-        {
-            QueueBuffer[] buffers = null;
-            lock (queueBuffers)
-            {
-                var queueCount = queueBuffers.Count;
-                buffers = new QueueBuffer[queueCount];
-                int index = 0;
-                foreach (var queueBuffer in queueBuffers)
-                {
-                    buffers[index++] = queueBuffer.Value;
-                }
-            }
-            return buffers;
-        }
-
-     
-
+    
         public void SetDmxValue(int channel, byte value, Guid queue, int priority)
         {
             //using the queue id, get the buffer
-            byte?[] queueBuffer = GetBufferForQueue(queue, priority);
+            byte?[] queueBuffer = GetBufferForQueue(queue);
             if (queueBuffer != null) //if queue is defined
             {
                 if (channel < queueBuffer.Length)

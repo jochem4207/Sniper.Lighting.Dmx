@@ -7,7 +7,10 @@ namespace SniperUsbDmx
 {
     public interface IQueueBuffer
     {
-        int Priority();
+        int Priority
+        {
+            get; set;
+        }
 
         byte?[] Buffer();
     }
