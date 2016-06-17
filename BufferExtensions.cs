@@ -97,7 +97,45 @@ namespace SniperUsbDmx
             }
             return toReturn;
         }
+        public static void SetNull(this byte?[] buffer,int bufferSize)
+        {
+            buffer = new byte?[bufferSize];
+            buffer.SetNull();
+        }
+        public static void  SetNull(this byte?[] buffer)
+        {
+          for(int i = 0; i < buffer.Length; i++)
+            {
+                buffer[i] = null;
+            }
+            
+        }
+        public static void SetToZero(this byte?[] buffer, int bufferSize)
+        {
+            buffer = new byte?[bufferSize];
+            buffer.SetToZero();
+        }
+        public static void SetToZero(this byte?[] buffer)
+        {
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                buffer[i] = 0;
+            }
 
+        }
+        public static void SetToZero(this byte[] buffer, int bufferSize)
+        {
+            buffer = new byte[bufferSize];
+            buffer.SetToZero();
+        }
+        public static void SetToZero(this byte[] buffer)
+        {
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                buffer[i] = 0;
+            }
+
+        }
         public static String ToFlatString(this int[] initialArray)
         {
             String toReturn = "";

@@ -63,6 +63,12 @@
     <Compile Include="Effects\Effect.cs" />
     <Compile Include="DmxController.cs" />
     <Compile Include="BufferExtensions.cs" />
+    <Compile Include="Inputs\DmxInputGenericSliders.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Inputs\DmxInputGenericSliders.Designer.cs">
+      <DependentUpon>DmxInputGenericSliders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inputs\IQueueBuffer.cs" />
     <Compile Include="Effects\MathHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +98,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Display\DmxDisplayGeneric.resx">
       <DependentUpon>DmxDisplayGeneric.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inputs\DmxInputGenericSliders.resx">
+      <DependentUpon>DmxInputGenericSliders.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
