@@ -57,6 +57,7 @@
     <Compile Include="Effects\EffectEventArgs.cs" />
     <Compile Include="Effects\Effect.cs" />
     <Compile Include="DmxController.cs" />
+    <Compile Include="Inputs\IQueueBuffer.cs" />
     <Compile Include="MathHelper.cs" />
     <Compile Include="OpenDMXUSB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,7 +67,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Effects\Pulse.cs" />
-    <Compile Include="QueueBuffer.cs" />
+    <Compile Include="Inputs\QueueBuffer.cs" />
     <Compile Include="StateChangedEventArgs.cs" />
     <Compile Include="StateChangedEventHandler.cs" />
     <Compile Include="ThreadSafeList.cs" />

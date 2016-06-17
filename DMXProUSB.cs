@@ -285,14 +285,17 @@ namespace SniperUsbDmx
             }
         }
 
-
+        public byte[] GetLiveBuffer()
+        {
+            return (byte[])buffer.Clone();
+        }
         protected bool BuildBufferFromQueues()
         {
-            byte?[] oldBuffer = GetCurrentBuffer();
+            byte[] oldBuffer = GetLiveBuffer();
 
             //copy the buffers to an array (fixed length) for sorting & merge - so we can unlock the dictionary sooner
-            QueueBuffer[] queueBuffers = CopyQueueBuffersToArray();
-            byte?[] newBuffer = MergeQueueBuffers(queueBuffers);
+            IQueueBuffer[] queueBuffers = CopyQueueBuffersToArray();
+            byte[] newBuffer = MergeQueueBuffers(queueBuffers);
 
             bool bufferChanged = CompareBuffers(oldBuffer, newBuffer);
             if (bufferChanged)
@@ -309,7 +312,20 @@ namespace SniperUsbDmx
             }
             return bufferChanged;
         }
-
+        private bool CompareBuffers(byte[] oldBuffer, byte[] newBuffer)
+        {
+            bool bufferChanged = false;
+            for (int channel = 0; channel < busLength; channel++)
+            {
+                if (oldBuffer[channel] != newBuffer[channel])
+                {
+                    bufferChanged = true;
+                    newData = true;
+                    break;
+                }
+            }
+            return bufferChanged;
+        }
         private bool CompareBuffers(byte?[] oldBuffer, byte?[] newBuffer)
         {
             bool bufferChanged = false;
@@ -325,20 +341,31 @@ namespace SniperUsbDmx
             return bufferChanged;
         }
 
-        private byte?[] MergeQueueBuffers(QueueBuffer[] buffers)
+        private byte[] MergeQueueBuffers(IQueueBuffer[] buffers)
         {
+            byte[] finalBuffer = new byte[busLength];
             byte?[] newBuffer = new byte?[busLength];
-            IOrderedEnumerable<QueueBuffer> orderedBuffers = buffers.OrderBy(queueBuffer => queueBuffer.CurrentPriority);
+            IOrderedEnumerable<IQueueBuffer> orderedBuffers = buffers.OrderBy(queueBuffer => queueBuffer.Priority());
             foreach (var queueBuffer in orderedBuffers)
             {
                 byte?[] queueBufferBuffer = queueBuffer.Buffer();
                 for (int channel = 0; channel < busLength; channel++)
                 {
                     byte? value = queueBufferBuffer[channel];
-                    newBuffer[channel] = value;
+                    if (value != null)
+                        newBuffer[channel] = value;
                 }
             }
-            return newBuffer;
+            for (int i = 0; i < busLength; i++)
+            {
+                if (newBuffer[i] == null)
+                    finalBuffer[i] = 0;
+                else
+                    finalBuffer[i] = (byte)newBuffer[i];
+            }
+            
+            return finalBuffer;
+
         }
 
         private QueueBuffer[] CopyQueueBuffersToArray()

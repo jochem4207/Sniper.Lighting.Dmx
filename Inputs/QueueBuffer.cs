@@ -5,12 +5,7 @@ using System.Text;
 
 namespace SniperUsbDmx
 {
-    public interface IQueueBuffer
-    {
-        int Priority();
-       
-         byte?[] Buffer();
-    }
+
     public class QueueBuffer:IQueueBuffer
     {
         public QueueBuffer(int BusLength)
