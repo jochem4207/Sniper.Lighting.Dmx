@@ -5,7 +5,7 @@ using System.Text;
 using System.Collections;
 using System.Threading;
 
-namespace Sniper.Lighting.DMX
+namespace SniperUsbDmx
 {
     //http://codereview.stackexchange.com/questions/7276/is-this-collection-actually-thread-safe-is-concurrent-iterating-querying-and-m
 

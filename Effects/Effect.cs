@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace Sniper.Lighting.DMX
+namespace SniperUsbDmx
 {
     public class Effect : IDisposable
     {
@@ -18,9 +18,9 @@ namespace Sniper.Lighting.DMX
         protected EasingExtents Extents;
         protected object UserData;
         protected Guid UniqueIdentifier;
-        //public Sniper.Lighting.DMX.DMXProUSB.EaseDMXValueComplete OnComplete;
-        //public Sniper.Lighting.DMX.DMXProUSB.EaseDMXValueStep OnStep;
-        //internal Sniper.Lighting.DMX.DMXProUSB.InternalEaseDMXValueComplete InternalOnComplete;
+        //public SniperUsbDmx.DMXProUSB.EaseDMXValueComplete OnComplete;
+        //public SniperUsbDmx.DMXProUSB.EaseDMXValueStep OnStep;
+        //internal SniperUsbDmx.DMXProUSB.InternalEaseDMXValueComplete InternalOnComplete;
         public event EventHandler<EffectEventArgs> Step;
         public event EventHandler<EffectEventArgs> Starting;
         public event EventHandler<EffectEventArgs> Complete;

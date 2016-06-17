@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Sniper.Lighting.DMX
+namespace SniperUsbDmx
 {
     public static class MathHelper
     {

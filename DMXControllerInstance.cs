@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace Sniper.Lighting.DMX
+namespace SniperUsbDmx
 {
     public class DmxControllerInstance
     {

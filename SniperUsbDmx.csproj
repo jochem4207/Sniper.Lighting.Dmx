@@ -8,8 +8,8 @@
     <ProjectGuid>{128E9445-0740-4103-89A1-A46398AFF387}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Sniper.Lighting.DMX</RootNamespace>
-    <AssemblyName>Sniper.Lighting.DMX</AssemblyName>
+    <RootNamespace>SniperUsbDmx</RootNamespace>
+    <AssemblyName>SniperUsbDmx</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

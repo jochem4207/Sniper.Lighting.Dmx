@@ -1,4 +1,4 @@
-﻿using Sniper.Lighting.DMX.Properties;
+﻿using SniperUsbDmx.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using FT_HANDLE = System.UInt32;
 
-namespace Sniper.Lighting.DMX
+namespace SniperUsbDmx
 {
     public class OpenDMXUSB : DMXProUSB
     {

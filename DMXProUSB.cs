@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.Threading;
-using Sniper.Lighting.DMX.Properties;
+using SniperUsbDmx.Properties;
 using FT_HANDLE = System.UInt32;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Runtime.ExceptionServices;
-using Sniper.Lighting.DMX.Display;
+using SniperUsbDmx.Display;
 
-namespace Sniper.Lighting.DMX
+namespace SniperUsbDmx
 {
     public class DMXProUSB
     {

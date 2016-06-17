@@ -1,4 +1,4 @@
-﻿namespace Sniper.Lighting.DMX.Display
+﻿namespace SniperUsbDmx.Display
 {
     public   interface IDisplayDmx
     {

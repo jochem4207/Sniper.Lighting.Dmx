@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Sniper.Lighting.DMX.Properties;
+using SniperUsbDmx.Properties;
 
-namespace Sniper.Lighting.DMX
+namespace SniperUsbDmx
 {
     public class DmxLimits
     {
