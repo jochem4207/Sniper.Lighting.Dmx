@@ -97,44 +97,61 @@ namespace SniperUsbDmx
             }
             return toReturn;
         }
-        public static void SetNull(this byte?[] buffer,int bufferSize)
+        public static byte?[] EmptyNullableBuffer(int size)
+        {
+            byte?[] toReturn = new byte?[size];
+            return toReturn.SetNull();
+        }
+        public static byte?[] SetNull(this byte?[] buffer,int bufferSize)
         {
             buffer = new byte?[bufferSize];
             buffer.SetNull();
+            return buffer;
         }
-        public static void  SetNull(this byte?[] buffer)
+        public static byte?[]  SetNull(this byte?[] buffer)
         {
           for(int i = 0; i < buffer.Length; i++)
             {
                 buffer[i] = null;
             }
+            return buffer;
             
         }
-        public static void SetToZero(this byte?[] buffer, int bufferSize)
+        public static byte?[] NullableZeroBuffer(int size)
+        {
+            byte?[] toReturn = new byte?[size];
+            return toReturn.SetToZero();
+        }
+        public static byte[] ZeroBuffer(int size)
+        {
+            byte[] toReturn = new byte[size];
+            return toReturn.SetToZero();
+        }
+        public static byte?[] SetToZero(this byte?[] buffer, int bufferSize)
         {
             buffer = new byte?[bufferSize];
-            buffer.SetToZero();
+            return buffer.SetToZero();
         }
-        public static void SetToZero(this byte?[] buffer)
+        public static byte?[] SetToZero(this byte?[] buffer)
         {
             for (int i = 0; i < buffer.Length; i++)
             {
                 buffer[i] = 0;
             }
-
+            return buffer;
         }
-        public static void SetToZero(this byte[] buffer, int bufferSize)
+        public static byte[] SetToZero(this byte[] buffer, int bufferSize)
         {
             buffer = new byte[bufferSize];
-            buffer.SetToZero();
+            return buffer.SetToZero();
         }
-        public static void SetToZero(this byte[] buffer)
+        public static byte[] SetToZero(this byte[] buffer)
         {
             for (int i = 0; i < buffer.Length; i++)
             {
                 buffer[i] = 0;
             }
-
+            return buffer;
         }
         public static String ToFlatString(this int[] initialArray)
         {

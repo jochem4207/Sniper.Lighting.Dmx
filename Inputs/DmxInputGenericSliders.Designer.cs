@@ -53,6 +53,7 @@
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(59, 20);
             this.numericUpDown1.TabIndex = 0;
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // label1
             // 
@@ -71,6 +72,7 @@
             this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackBar1.Size = new System.Drawing.Size(45, 201);
             this.trackBar1.TabIndex = 2;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar123_Scroll);
             // 
             // label2
             // 
@@ -98,6 +100,7 @@
             this.trackBar2.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackBar2.Size = new System.Drawing.Size(45, 201);
             this.trackBar2.TabIndex = 4;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar123_Scroll);
             // 
             // label4
             // 
@@ -116,6 +119,7 @@
             this.trackBar3.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackBar3.Size = new System.Drawing.Size(45, 201);
             this.trackBar3.TabIndex = 6;
+            this.trackBar3.Scroll += new System.EventHandler(this.trackBar123_Scroll);
             // 
             // DmxInputGenericSliders
             // 
