@@ -8,6 +8,47 @@ namespace SniperUsbDmx
     public static class Extensions
     {
 
+        public static IQueueBuffer[] CopyQueueBuffersToArray(Dictionary<Guid, IQueueBuffer> queueBuffers)
+        {
+            IQueueBuffer[] buffers = null;
+
+            var queueCount = queueBuffers.Count;
+            buffers = new IQueueBuffer[queueCount];
+            int index = 0;
+            foreach (IQueueBuffer queueBuffer in queueBuffers.Values)
+            {
+                buffers[index++] = queueBuffer;
+            }
+
+            return buffers;
+        }
+
+        public static byte[] MergeQueueBuffers(this IQueueBuffer[] buffers, int busLength)
+        {
+            byte[] finalBuffer = new byte[busLength];
+            byte?[] newBuffer = new byte?[busLength];
+            IOrderedEnumerable<IQueueBuffer> orderedBuffers = buffers.OrderBy(queueBuffer => queueBuffer.Priority());
+            foreach (var queueBuffer in orderedBuffers)
+            {
+                byte?[] queueBufferBuffer = queueBuffer.Buffer();
+                for (int channel = 0; channel < busLength; channel++)
+                {
+                    byte? value = queueBufferBuffer[channel];
+                    if (value != null)
+                        newBuffer[channel] = value;
+                }
+            }
+            for (int i = 0; i < busLength; i++)
+            {
+                if (newBuffer[i] == null)
+                    finalBuffer[i] = 0;
+                else
+                    finalBuffer[i] = (byte)newBuffer[i];
+            }
+
+            return finalBuffer;
+
+        }
 
 
         public static bool CompareBuffers(this byte[] oldBuffer, byte[] newBuffer)

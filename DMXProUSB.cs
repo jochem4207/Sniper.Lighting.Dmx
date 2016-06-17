@@ -295,7 +295,7 @@ namespace SniperUsbDmx
 
             //copy the buffers to an array (fixed length) for sorting & merge - so we can unlock the dictionary sooner
             IQueueBuffer[] queueBuffers = CopyQueueBuffersToArray();
-            byte[] newBuffer = MergeQueueBuffers(queueBuffers);
+            byte[] newBuffer = queueBuffers.MergeQueueBuffers(busLength);
             this.newData= oldBuffer.CompareBuffers(newBuffer);
            
             if (newData)
@@ -315,33 +315,6 @@ namespace SniperUsbDmx
 
       
 
-        private byte[] MergeQueueBuffers(IQueueBuffer[] buffers)
-        {
-            byte[] finalBuffer = new byte[busLength];
-            byte?[] newBuffer = new byte?[busLength];
-            IOrderedEnumerable<IQueueBuffer> orderedBuffers = buffers.OrderBy(queueBuffer => queueBuffer.Priority());
-            foreach (var queueBuffer in orderedBuffers)
-            {
-                byte?[] queueBufferBuffer = queueBuffer.Buffer();
-                for (int channel = 0; channel < busLength; channel++)
-                {
-                    byte? value = queueBufferBuffer[channel];
-                    if (value != null)
-                        newBuffer[channel] = value;
-                }
-            }
-            for (int i = 0; i < busLength; i++)
-            {
-                if (newBuffer[i] == null)
-                    finalBuffer[i] = 0;
-                else
-                    finalBuffer[i] = (byte)newBuffer[i];
-            }
-            
-            return finalBuffer;
-
-        }
-
         private QueueBuffer[] CopyQueueBuffersToArray()
         {
             QueueBuffer[] buffers = null;
@@ -357,6 +330,8 @@ namespace SniperUsbDmx
             }
             return buffers;
         }
+
+     
 
         public void SetDmxValue(int channel, byte value, Guid queue, int priority)
         {
