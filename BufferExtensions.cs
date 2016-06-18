@@ -22,6 +22,20 @@ namespace SniperUsbDmx
 
             return buffers;
         }
+        public static QueueBuffer[] CopyQueueBuffersToArray(this List<IQueueBuffer> queueBuffers)
+        {
+            QueueBuffer[] buffers = null;
+
+            var queueCount = queueBuffers.Count;
+            buffers = new QueueBuffer[queueCount];
+            int index = 0;
+            foreach (IQueueBuffer queueBuffer in queueBuffers)
+            {
+                buffers[index++] = new QueueBuffer() { CurrentPriority = queueBuffer.Priority, HardBuffer = queueBuffer.Buffer() };
+            }
+
+            return buffers;
+        }
 
         public static byte[] MergeQueueBuffers(this IQueueBuffer[] buffers, int busLength)
         {

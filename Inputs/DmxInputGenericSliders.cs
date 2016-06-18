@@ -44,8 +44,8 @@ namespace SniperUsbDmx.Inputs
             x = (x > 509) ? 509 : x;
 
             int a = (int)this.trackBar1.Value;
-            int b = (int)this.trackBar1.Value;
-            int c = (int)this.trackBar1.Value;
+            int b = (int)this.trackBar2.Value;
+            int c = (int)this.trackBar3.Value;
             toReturn[x] = (byte)a;
             toReturn[x + 1] = (byte)b;
             toReturn[x + 2] = (byte)c;

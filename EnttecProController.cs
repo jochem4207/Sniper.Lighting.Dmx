@@ -13,12 +13,11 @@ using SniperUsbDmx.Display;
 
 namespace SniperUsbDmx
 {
-    public sealed class EnttecFtdiController: IDisplayDmx,IDisposable
+    public sealed class EnttecProController: IDisplayDmx,IDisposable
     {
-        private List<IDisplayDmx> DisplayControls;
+        
         private byte[] bufferToUsb;
         private int busLength;
-        private Dictionary<Guid, IQueueBuffer> queueBuffers;
         private uint handle;
         private bool done = false;
 
@@ -57,11 +56,11 @@ namespace SniperUsbDmx
 
 
       
-            private static readonly EnttecFtdiController instance = new EnttecFtdiController();
+            private static readonly EnttecProController instance = new EnttecProController();
 
            
 
-            public static EnttecFtdiController Instance
+            public static EnttecProController Instance
             {
                 get
                 {
@@ -71,7 +70,7 @@ namespace SniperUsbDmx
         
 
 
-        private EnttecFtdiController()
+        private EnttecProController()
         {
             busLength = Settings.Default.DMXChannelCount;
             if (bufferToUsb == null)
@@ -80,7 +79,7 @@ namespace SniperUsbDmx
                 nextBuffer = BufferExtensions.ZeroBuffer(busLength);
                 
             }
-            queueBuffers = new Dictionary<Guid, IQueueBuffer>();
+           
         }
 
         private DmxLimits limits;
@@ -222,10 +221,7 @@ namespace SniperUsbDmx
 
                         System.Threading.Thread.Sleep(25);
                     }
-                    if (this.DisplayControls.Count == 0 && !Connected)
-                    {
-                        System.Threading.Thread.Sleep(1000);
-                    }
+                  
                 }
                 catch (Exception ex)
                 {

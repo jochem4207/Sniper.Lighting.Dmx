@@ -54,7 +54,8 @@
     <Compile Include="Display\IDisplayDmx.cs" />
     <Compile Include="DMXControllerInstance.cs" />
     <Compile Include="DmxLimits.cs" />
-    <Compile Include="EnttecFtdiController.cs" />
+    <Compile Include="DmxIoManager.cs" />
+    <Compile Include="EnttecProController.cs" />
     <Compile Include="DMXProUSB.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -83,6 +84,7 @@
     <Compile Include="Inputs\QueueBuffer.cs" />
     <Compile Include="StateChangedEventArgs.cs" />
     <Compile Include="StateChangedEventHandler.cs" />
+    <Compile Include="ThreadExtensions.cs" />
     <Compile Include="ThreadSafeList.cs" />
   </ItemGroup>
   <ItemGroup>
