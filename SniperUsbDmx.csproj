@@ -54,6 +54,7 @@
     <Compile Include="Display\IDisplayDmx.cs" />
     <Compile Include="DMXControllerInstance.cs" />
     <Compile Include="DmxLimits.cs" />
+    <Compile Include="EnttecFtdiController.cs" />
     <Compile Include="DMXProUSB.cs">
       <SubType>Code</SubType>
     </Compile>
