@@ -85,12 +85,30 @@ namespace SniperUsbDmx
         {
             return (byte[])buffer.Clone();
         }
+
+        public QueueBuffer[] ThreadsafeCopyBuffersToArray(List<IQueueBuffer> queueBuffers)
+        {
+            QueueBuffer[] buffers = null;
+
+            var queueCount = queueBuffers.Count;
+            buffers = new QueueBuffer[queueCount];
+            int index = 0;
+            foreach (IQueueBuffer queueBuffer in queueBuffers)
+            {
+                byte?[] buff=null;
+                SafeRequestDMX(queueBuffer, out buff);
+                buffers[index++] = new QueueBuffer() { CurrentPriority = queueBuffer.Priority, HardBuffer = buff };
+            }
+
+            return buffers;
+        }
         protected bool BuildBufferFromQueues()
         {
             byte[] oldBuffer = GetLiveBuffer();
 
             //copy the buffers to an array (fixed length) for sorting & merge - so we can unlock the dictionary sooner
-            QueueBuffer[] arrayBuffers = this.InputBuffers.CopyQueueBuffersToArray();
+           QueueBuffer[] arrayBuffers = this.InputBuffers.CopyQueueBuffersToArray();
+            // QueueBuffer[] arrayBuffers = ThreadsafeCopyBuffersToArray(this.InputBuffers);
             byte[] newBuffer = arrayBuffers.MergeQueueBuffers(busLength);
             this.newData= oldBuffer.CompareBuffers(newBuffer);
            
@@ -151,6 +169,32 @@ namespace SniperUsbDmx
             Connected = false;
             done = false;
         }
+
+
+
+        delegate void ReturnBufferCallback(IQueueBuffer target, out byte?[] returnBuffer);
+        private void SafeRequestDMX(IQueueBuffer target, out byte?[] returnBuffer)
+        {
+            // InvokeRequired required compares the thread ID of the
+            // calling thread to the thread ID of the creating thread.
+            // If these threads are different, it returns true.
+            Control controlRef = target as Control;
+            if (controlRef != null)
+            {
+                if (controlRef.InvokeRequired)
+                {
+                    ReturnBufferCallback d = new ReturnBufferCallback(SafeRequestDMX);
+                    byte?[] outParamBuff = null;
+                    controlRef.Invoke(d, new object[] { target, outParamBuff });
+                    returnBuffer = outParamBuff;
+                    return;
+                }
+
+            }
+            returnBuffer = target.Buffer();
+
+        }
+
 
         delegate void SetTextCallback(IDisplayDmx target, byte[] dmxValues);
         private void SafeSendDMX(IDisplayDmx target, byte[] dmxValues)
