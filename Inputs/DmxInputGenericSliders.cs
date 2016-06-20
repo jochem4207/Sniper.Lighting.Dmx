@@ -14,7 +14,7 @@ namespace SniperUsbDmx.Inputs
         public DmxInputGenericSliders()
         {
             InitializeComponent();
-            outputBuffer = new byte?[512].SetNull();
+           // outputBuffer = new byte?[512].SetNull();
         }
 
         private int _priority;
@@ -33,11 +33,6 @@ namespace SniperUsbDmx.Inputs
 
         public byte?[] Buffer()
         {
-            return outputBuffer;
-        }
-        byte?[] outputBuffer;
-        private void updateBuffer()
-        {
             byte?[] toReturn = new byte?[512];
             toReturn.SetNull();
             int x = (int)this.numericUpDown1.Value;
@@ -49,17 +44,17 @@ namespace SniperUsbDmx.Inputs
             toReturn[x] = (byte)a;
             toReturn[x + 1] = (byte)b;
             toReturn[x + 2] = (byte)c;
-            outputBuffer= toReturn;
-
+            return toReturn;
         }
+     
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            updateBuffer();
+          
         }
 
         private void trackBar123_Scroll(object sender, EventArgs e)
         {
-            updateBuffer();
+          
         }
     }
 }

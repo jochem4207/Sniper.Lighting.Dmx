@@ -52,19 +52,14 @@
       <DependentUpon>DmxDisplayGeneric.cs</DependentUpon>
     </Compile>
     <Compile Include="Display\IDisplayDmx.cs" />
-    <Compile Include="DMXControllerInstance.cs" />
     <Compile Include="DmxLimits.cs" />
     <Compile Include="DmxIoManager.cs" />
     <Compile Include="EnttecProController.cs" />
-    <Compile Include="DMXProUSB.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Effects\Easing.cs" />
     <Compile Include="Effects\EasingExtents.cs" />
     <Compile Include="Effects\EasingType.cs" />
     <Compile Include="Effects\EffectEventArgs.cs" />
     <Compile Include="Effects\Effect.cs" />
-    <Compile Include="DmxController.cs" />
     <Compile Include="BufferExtensions.cs" />
     <Compile Include="Inputs\DmxInputGenericSliders.cs">
       <SubType>UserControl</SubType>

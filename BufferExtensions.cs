@@ -17,7 +17,7 @@ namespace SniperUsbDmx
             int index = 0;
             foreach (IQueueBuffer queueBuffer in queueBuffers.Values)
             {
-                buffers[index++] = new QueueBuffer() { CurrentPriority = queueBuffer.Priority, HardBuffer = queueBuffer.Buffer() };
+                buffers[index++] = new QueueBuffer(queueBuffer.Priority, queueBuffer.Buffer());
             }
 
             return buffers;
@@ -31,7 +31,7 @@ namespace SniperUsbDmx
             int index = 0;
             foreach (IQueueBuffer queueBuffer in queueBuffers)
             {
-                buffers[index++] = new QueueBuffer() { CurrentPriority = queueBuffer.Priority, HardBuffer = queueBuffer.Buffer() };
+                buffers[index++] = new QueueBuffer( queueBuffer.Priority, queueBuffer.Buffer());
             }
 
             return buffers;

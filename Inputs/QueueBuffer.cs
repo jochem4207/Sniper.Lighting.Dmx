@@ -8,42 +8,32 @@ namespace SniperUsbDmx
 
     public class QueueBuffer:IQueueBuffer
     {
-        public QueueBuffer(int BusLength=512)
+        public QueueBuffer(int size=512):this(1,new byte?[size])
         {
-            CurrentPriority = 1;
-            HardBuffer = new byte?[BusLength];
+            
+        }
+        public QueueBuffer(int priority, byte?[] buffer)
+        {
+            Priority = priority;
+            HardBuffer = buffer;
         }
 
       
-
+         public byte?[] Buffer()
+        {
+            return this.HardBuffer;
+        }
         public byte?[] HardBuffer
         {
             get;
             set;
         }
 
-        int IQueueBuffer.Priority
-        {
-            get
-            {
-                return CurrentPriority;
-            }
+        public int Priority { get; set; }
+      
 
-            set
-            {
-                CurrentPriority = value;
-            }
-        }
+    
 
-        public int CurrentPriority;
-
-      public  int Priority()
-        {
-            return this.CurrentPriority;
-        }
-       public byte?[] Buffer()
-        {
-            return this.HardBuffer;
-        }
+      
     }
 }

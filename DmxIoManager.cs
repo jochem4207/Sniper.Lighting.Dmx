@@ -95,9 +95,9 @@ namespace SniperUsbDmx
             int index = 0;
             foreach (IQueueBuffer queueBuffer in queueBuffers)
             {
-                byte?[] buff=null;
-                SafeRequestDMX(queueBuffer, out buff);
-                buffers[index++] = new QueueBuffer() { CurrentPriority = queueBuffer.Priority, HardBuffer = buff };
+                byte?[] buff = SafeRequestDMX(queueBuffer);
+                
+                buffers[index++] = new QueueBuffer(queueBuffer.Priority, buff );
             }
 
             return buffers;
@@ -107,8 +107,8 @@ namespace SniperUsbDmx
             byte[] oldBuffer = GetLiveBuffer();
 
             //copy the buffers to an array (fixed length) for sorting & merge - so we can unlock the dictionary sooner
-           QueueBuffer[] arrayBuffers = this.InputBuffers.CopyQueueBuffersToArray();
-            // QueueBuffer[] arrayBuffers = ThreadsafeCopyBuffersToArray(this.InputBuffers);
+           //  QueueBuffer[] arrayBuffers = this.InputBuffers.CopyQueueBuffersToArray();
+           QueueBuffer[] arrayBuffers = ThreadsafeCopyBuffersToArray(this.InputBuffers);
             byte[] newBuffer = arrayBuffers.MergeQueueBuffers(busLength);
             this.newData= oldBuffer.CompareBuffers(newBuffer);
            
@@ -172,8 +172,8 @@ namespace SniperUsbDmx
 
 
 
-        delegate void ReturnBufferCallback(IQueueBuffer target, out byte?[] returnBuffer);
-        private void SafeRequestDMX(IQueueBuffer target, out byte?[] returnBuffer)
+        delegate byte?[] ReturnBufferCallback(IQueueBuffer target);
+        private byte?[] SafeRequestDMX(IQueueBuffer target)
         {
             // InvokeRequired required compares the thread ID of the
             // calling thread to the thread ID of the creating thread.
@@ -184,14 +184,13 @@ namespace SniperUsbDmx
                 if (controlRef.InvokeRequired)
                 {
                     ReturnBufferCallback d = new ReturnBufferCallback(SafeRequestDMX);
-                    byte?[] outParamBuff = null;
-                    controlRef.Invoke(d, new object[] { target, outParamBuff });
-                    returnBuffer = outParamBuff;
-                    return;
+                   
+                   return (byte?[])controlRef.Invoke(d, new object[] { target});
+                  
                 }
 
             }
-            returnBuffer = target.Buffer();
+          return target.Buffer();
 
         }
 
