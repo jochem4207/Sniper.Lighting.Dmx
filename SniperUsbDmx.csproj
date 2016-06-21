@@ -61,6 +61,7 @@
     <Compile Include="Effects\EffectEventArgs.cs" />
     <Compile Include="Effects\Effect.cs" />
     <Compile Include="BufferExtensions.cs" />
+    <Compile Include="Inputs\Animator.cs" />
     <Compile Include="Inputs\DmxInputGenericSliders.cs">
       <SubType>UserControl</SubType>
     </Compile>
