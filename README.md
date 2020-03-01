@@ -6,7 +6,7 @@ To
 
 Using
 - hardware: Enttec dmx pro interface (MK1) 
-- software: qlc+ webapi (suggestion of the facebook group: https://www.facebook.com/groups/lightingtrainer/?fref=nf)
+- software: QLC+ webapi (suggestion of the facebook group: https://www.facebook.com/groups/lightingtrainer/?fref=nf)
 
 End goals
 - Traktor pro 3 to <my open custom software> to dmx 
@@ -16,7 +16,7 @@ End goals
 # Steps to go
 
 - [x] Make a plan
-- [ ] Create a C# App that can talk with QLC+
+- [ ] Create a C# App (api, tbd) that can talk with QLC+
 - [ ] Create sequences in QLC+ to be called from the web api
 - [ ] Test the sound functions of QLC+
 - [ ] If needed develop something as input for the C# App based on sound input 
