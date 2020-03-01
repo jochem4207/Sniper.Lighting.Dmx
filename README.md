@@ -15,9 +15,13 @@ End goals
   
 # Steps to go
 
+## For the basic lightning
 - [x] Make a plan
 - [ ] Create a C# App (api, tbd) that can talk with QLC+
 - [ ] Create sequences in QLC+ to be called from the web api
+- [ ] Call and make basic show 
+
+## For the sound part
 - [ ] Test the sound functions of QLC+
 - [ ] If needed develop something as input for the C# App based on sound input 
 
