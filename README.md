@@ -12,6 +12,14 @@ End goals
 - Traktor pro 3 to <my open custom software> to dmx 
 - Document most steps so it can help people in the future
 - Make a video how to use
+  
+# Steps to go
+
+- [x] Make a plan
+- [ ] Create a C# App that can talk with QLC+
+- [ ] Create sequences in QLC+ to be called from the web api
+- [ ] Test the sound functions of QLC+
+- [ ] If needed develop something as input for the C# App based on sound input 
 
 # History
 - Tried this repo, didn't work, no signals were actually send (see https://github.com/agrath/Sniper.Lighting.Dmx/issues/4)
