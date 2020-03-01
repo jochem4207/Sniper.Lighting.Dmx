@@ -1,8 +1,22 @@
-# Sniper.Lighting.Dmx
-Library for controlling DMX-512 devices using a DMXProUSB controller
+# My purpose for this repo 
+Creating a better audio-to-dmx software
+To 
+- Create lightshow on music
+- A better sound to dmx for my home setup
 
-The intention with this library is to make it simple for C# to read and write multiple sources of DMX 
-data simultaneously, and output them to an EnteccDMXPro Mk2 USB device.
+Using
+- hardware: Enttec dmx pro interface (MK1) 
+- software: qlc+ webapi (suggestion of the facebook group: https://www.facebook.com/groups/lightingtrainer/?fref=nf)
 
-https://www.amazon.com/Enttec-DMX-USB-70314-Pro2/dp/B00XD7WRXU/ref=sr_1_2?ie=UTF8&qid=1466180616&sr=8-2
+End goals
+- Traktor pro to <my open custom software> to dmx 
+- Document most steps so it can help people in the future
+- Make a video how to use
+
+# History
+- Tried this repo, didn't work, no signals were actually send (see https://github.com/agrath/Sniper.Lighting.Dmx/issues/4)
+- Tried QuickQ, MagicQ, seem far to complex
+- Tried SoundSwitch, has no sound 2 dmx (lovely software tho)
+- Tried FreeStyler with Sound 2 dmx, is only sending random dmx signals, i need more control. Good stuff if you want random dmx.
+
 
