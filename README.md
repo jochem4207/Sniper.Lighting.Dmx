@@ -26,5 +26,6 @@ End goals
 - Tried QuickQ, MagicQ, seem far to complex
 - Tried SoundSwitch, has no sound 2 dmx (lovely software tho)
 - Tried FreeStyler with Sound 2 dmx, is only sending random dmx signals, i need more control. Good stuff if you want random dmx.
-
+- Tried OLA (but hell, that stuff is old and hard to install on a ubuntu vm)
+- Tried a fork of this repo (https://github.com/neoxai/Sniper.Lighting.Dmx) couldn't get the example to work yet, didn't invest much time. I changed my mind to start working on the QLC+ example. Due this software is currently being maintained.
 
