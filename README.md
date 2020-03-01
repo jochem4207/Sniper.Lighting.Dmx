@@ -9,7 +9,7 @@ Using
 - software: qlc+ webapi (suggestion of the facebook group: https://www.facebook.com/groups/lightingtrainer/?fref=nf)
 
 End goals
-- Traktor pro to <my open custom software> to dmx 
+- Traktor pro 3 to <my open custom software> to dmx 
 - Document most steps so it can help people in the future
 - Make a video how to use
 
