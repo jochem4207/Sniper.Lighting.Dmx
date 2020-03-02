@@ -1,0 +1,24 @@
+S:\OLA\Sniper.Lighting.Dmx-master\Sniper.Lighting.Dmx-master  - original\Sniper.Lighting.DMX.DemoProject\obj\Debug\Sniper.Lighting.DMX.DemoProject.csprojAssemblyReference.cache
+S:\OLA\Sniper.Lighting.Dmx-master\Sniper.Lighting.Dmx-master  - original\Sniper.Lighting.DMX.DemoProject\obj\Debug\Sniper.Lighting.DMX.DemoProject.csproj.CoreCompileInputs.cache
+S:\OLA\Sniper.Lighting.Dmx-master\Sniper.Lighting.Dmx-master  - original\Sniper.Lighting.DMX.DemoProject\bin\Debug\ftd2xx.dll
+S:\OLA\Sniper.Lighting.Dmx-master\Sniper.Lighting.Dmx-master  - original\Sniper.Lighting.DMX.DemoProject\bin\Debug\Sniper.Lighting.DMX.DemoProject.exe.config
+S:\OLA\Sniper.Lighting.Dmx-master\Sniper.Lighting.Dmx-master  - original\Sniper.Lighting.DMX.DemoProject\bin\Debug\Sniper.Lighting.DMX.DemoProject.exe
+S:\OLA\Sniper.Lighting.Dmx-master\Sniper.Lighting.Dmx-master  - original\Sniper.Lighting.DMX.DemoProject\bin\Debug\Sniper.Lighting.DMX.DemoProject.pdb
+S:\OLA\Sniper.Lighting.Dmx-master\Sniper.Lighting.Dmx-master  - original\Sniper.Lighting.DMX.DemoProject\bin\Debug\Sniper.Lighting.DMX.dll
+S:\OLA\Sniper.Lighting.Dmx-master\Sniper.Lighting.Dmx-master  - original\Sniper.Lighting.DMX.DemoProject\bin\Debug\Sniper.Lighting.DMX.pdb
+S:\OLA\Sniper.Lighting.Dmx-master\Sniper.Lighting.Dmx-master  - original\Sniper.Lighting.DMX.DemoProject\bin\Debug\Sniper.Lighting.DMX.dll.config
+S:\OLA\Sniper.Lighting.Dmx-master\Sniper.Lighting.Dmx-master  - original\Sniper.Lighting.DMX.DemoProject\obj\Debug\Sniper.Lighting.DMX.DemoProject.csproj.CopyComplete
+S:\OLA\Sniper.Lighting.Dmx-master\Sniper.Lighting.Dmx-master  - original\Sniper.Lighting.DMX.DemoProject\obj\Debug\Sniper.Lighting.DMX.DemoProject.exe
+S:\OLA\Sniper.Lighting.Dmx-master\Sniper.Lighting.Dmx-master  - original\Sniper.Lighting.DMX.DemoProject\obj\Debug\Sniper.Lighting.DMX.DemoProject.pdb
+S:\DMXProject\Code\Sniper.Lighting.Dmx.DemoProject\obj\Debug\Sniper.Lighting.DMX.DemoProject.csprojAssemblyReference.cache
+S:\DMXProject\Code\Sniper.Lighting.Dmx.DemoProject\obj\Debug\Sniper.Lighting.DMX.DemoProject.csproj.CoreCompileInputs.cache
+S:\DMXProject\Code\Sniper.Lighting.Dmx.DemoProject\obj\Debug\Sniper.Lighting.DMX.DemoProject.exe
+S:\DMXProject\Code\Sniper.Lighting.Dmx.DemoProject\obj\Debug\Sniper.Lighting.DMX.DemoProject.pdb
+S:\DMXProject\Code\Sniper.Lighting.Dmx.DemoProject\bin\Debug\ftd2xx.dll
+S:\DMXProject\Code\Sniper.Lighting.Dmx.DemoProject\bin\Debug\Sniper.Lighting.DMX.DemoProject.exe.config
+S:\DMXProject\Code\Sniper.Lighting.Dmx.DemoProject\bin\Debug\Sniper.Lighting.DMX.DemoProject.exe
+S:\DMXProject\Code\Sniper.Lighting.Dmx.DemoProject\bin\Debug\Sniper.Lighting.DMX.DemoProject.pdb
+S:\DMXProject\Code\Sniper.Lighting.Dmx.DemoProject\bin\Debug\Sniper.Lighting.DMX.dll
+S:\DMXProject\Code\Sniper.Lighting.Dmx.DemoProject\bin\Debug\Sniper.Lighting.DMX.pdb
+S:\DMXProject\Code\Sniper.Lighting.Dmx.DemoProject\bin\Debug\Sniper.Lighting.DMX.dll.config
+S:\DMXProject\Code\Sniper.Lighting.Dmx.DemoProject\obj\Debug\Sniper.Lighting.DMX.DemoProject.csproj.CopyComplete

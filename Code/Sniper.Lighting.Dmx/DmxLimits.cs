@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SniperUsbDmx.Properties;
+using Sniper.Lighting.DMX.Properties;
 
-namespace SniperUsbDmx
+namespace Sniper.Lighting.DMX
 {
     public class DmxLimits
     {
@@ -14,10 +14,10 @@ namespace SniperUsbDmx
         {
             Min = new byte[Settings.Default.DMXChannelCount];
             Max = new byte[Settings.Default.DMXChannelCount];
-            int i=0;
-            foreach (byte b in Max)
+
+            for (int i = 0; i < Max.Length; i++)
             {
-                Max[i++] = 255;
+                Max[i] = 255;
             }
         }
     }

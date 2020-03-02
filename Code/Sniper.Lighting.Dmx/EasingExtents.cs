@@ -5,8 +5,10 @@ using System.Text;
 
 namespace Sniper.Lighting.DMX
 {
-    public class StateChangedEventArgs : EventArgs
+    public enum EasingExtents
     {
-        public byte[] CurrentState;
+        EaseIn,
+        EaseOut,
+        EaseInOut
     }
 }

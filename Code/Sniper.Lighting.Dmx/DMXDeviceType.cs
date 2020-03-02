@@ -5,8 +5,9 @@ using System.Text;
 
 namespace Sniper.Lighting.DMX
 {
-    public class StateChangedEventArgs : EventArgs
+    public enum DMXDeviceType
     {
-        public byte[] CurrentState;
+        ProDMX,
+        OpenDMX
     }
 }

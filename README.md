@@ -25,6 +25,13 @@ End goals
 - [ ] Test the sound functions of QLC+
 - [ ] If needed develop something as input for the C# App based on sound input 
 
+
+# Sources used
+- [ ] https://www.qlcplus.org/tutorials.html to get a basic understanding of qlc+ 
+
+# Optional 
+- [ ] Create a plugin like this one for Traktor Pro 3 (https://github.com/VDJartnet/VDJartnet) idea came from (https://www.qlcplus.org/forum/viewtopic.php?f=30&t=12303)
+
 # History
 - Tried this repo, didn't work, no signals were actually send (see https://github.com/agrath/Sniper.Lighting.Dmx/issues/4)
 - Tried QuickQ, MagicQ, seem far to complex
@@ -33,3 +40,6 @@ End goals
 - Tried OLA (but hell, that stuff is old and hard to install on a ubuntu vm)
 - Tried a fork of this repo (https://github.com/neoxai/Sniper.Lighting.Dmx) couldn't get the example to work yet, didn't invest much time. I changed my mind to start working on the QLC+ example. Due this software is currently being maintained.
 
+# Stuff to look into 
+- OS2L 
+- Timecode 

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
+using System.Collections.Generic;
 using System.Threading;
 
-namespace SniperUsbDmx
+namespace Sniper.Lighting.DMX
 {
     //http://codereview.stackexchange.com/questions/7276/is-this-collection-actually-thread-safe-is-concurrent-iterating-querying-and-m
 

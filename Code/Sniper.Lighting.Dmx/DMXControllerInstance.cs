@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace SniperUsbDmx
+namespace Sniper.Lighting.DMX
 {
     public class DmxControllerInstance
     {
@@ -15,9 +15,9 @@ namespace SniperUsbDmx
         private DMXProUSB dmxDevice;
         private const int busLength = 512;
 
-        public DmxControllerInstance()
+        public DmxControllerInstance(DMXDeviceType dmxDeviceType)
         {
-            dmxDevice =  new DMXProUSB();
+            dmxDevice = dmxDeviceType == DMXDeviceType.OpenDMX ? new OpenDMXUSB() : new DMXProUSB();
             done = false;
             for (int i = 0; i < busLength; i++)
             {
@@ -163,7 +163,7 @@ namespace SniperUsbDmx
             dmxDevice.Dispose();
         }
 
-        public byte?[] GetCurrentValues()
+        public byte[] GetCurrentValues()
         {
             return dmxDevice.GetCurrentBuffer();
         }

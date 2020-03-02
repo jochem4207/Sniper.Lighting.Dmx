@@ -8,5 +8,3 @@ packages
 Sniper.Lighting.DMX.sln
 Sniper.Lighting.DMX.v12.suo
 obj/Release/Sniper.Lighting.DMX.csproj.FileListAbsolute.txt
-*.suo
-/obj/Debug
