@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE FixtureDefinition>
+<FixtureDefinition xmlns="http://www.qlcplus.org/FixtureDefinition">
+ <Creator>
+  <Name>Q Light Controller Plus</Name>
+  <Version>4.12.2</Version>
+  <Author>Jochem</Author>
+ </Creator>
+ <Manufacturer>Ayra</Manufacturer>
+ <Model>Alo Micro Scan Led Scanner</Model>
+ <Type>Scanner</Type>
+ <Channel Name="Sound-Controlled Show Mode">
+  <Group Byte="0">Effect</Group>
+  <Capability Min="0" Max="7">Blackout</Capability>
+  <Capability Min="8" Max="37">Show 1</Capability>
+  <Capability Min="38" Max="67">Show 2</Capability>
+  <Capability Min="68" Max="97">Show 3</Capability>
+  <Capability Min="98" Max="127">Show 4</Capability>
+  <Capability Min="128" Max="157">Show 5</Capability>
+  <Capability Min="158" Max="187">Show 6</Capability>
+  <Capability Min="188" Max="217">Show 7</Capability>
+  <Capability Min="218" Max="247">Show 8</Capability>
+  <Capability Min="248" Max="255">Random show</Capability>
+ </Channel>
+ <Channel Name="Pan" Preset="PositionPan"/>
+ <Channel Name="Tilt" Preset="PositionTilt"/>
+ <Channel Name="Color Wheel" Preset="ColorWheel"/>
+ <Channel Name="Gobo Wheel" Preset="GoboWheel"/>
+ <Channel Name="Shutter">
+  <Group Byte="1">Shutter</Group>
+  <Capability Min="0" Max="7">Blackout</Capability>
+  <Capability Min="8" Max="15">Open</Capability>
+  <Capability Min="16" Max="131">Stroboscope Mode, Slow-fast</Capability>
+  <Capability Min="132" Max="139">Open</Capability>
+  <Capability Min="140" Max="181">Shutter slow open, close fast, slow - fast</Capability>
+  <Capability Min="182" Max="189">Open</Capability>
+  <Capability Min="190" Max="231">Shutter slow close, open fast, slow - fast</Capability>
+  <Capability Min="232" Max="239">Open</Capability>
+  <Capability Min="240" Max="247">Random Strobe</Capability>
+  <Capability Min="248" Max="255">Open</Capability>
+ </Channel>
+ <Channel Name="Master dimmer" Preset="IntensityMasterDimmer"/>
+ <Channel Name="Movement Speed" Preset="SpeedPanTiltFastSlow"/>
+ <Channel Name="Multiple Functions">
+  <Group Byte="0">Effect</Group>
+  <Capability Min="0" Max="69">No function</Capability>
+  <Capability Min="70" Max="79">Blackout during pan/tilt movement, fast LED switching</Capability>
+  <Capability Min="80" Max="89">Disable blackout during pan/tilt movement</Capability>
+  <Capability Min="90" Max="199">No function</Capability>
+  <Capability Min="200" Max="209">Reset after 3 seconds</Capability>
+  <Capability Min="210" Max="239">No function</Capability>
+  <Capability Min="240" Max="255">Sound activated mode</Capability>
+ </Channel>
+ <Channel Name="Pan fine" Preset="PositionPanFine"/>
+ <Channel Name="Tilt fine" Preset="PositionTiltFine"/>
+ <Mode Name="1CH">
+  <Channel Number="0">Sound-Controlled Show Mode</Channel>
+ </Mode>
+ <Mode Name="8CH">
+  <Channel Number="0">Pan</Channel>
+  <Channel Number="1">Tilt</Channel>
+  <Channel Number="2">Color Wheel</Channel>
+  <Channel Number="3">Gobo Wheel</Channel>
+  <Channel Number="4">Shutter</Channel>
+  <Channel Number="5">Master dimmer</Channel>
+  <Channel Number="6">Movement Speed</Channel>
+  <Channel Number="7">Multiple Functions</Channel>
+ </Mode>
+ <Mode Name="10CH">
+  <Channel Number="0">Pan</Channel>
+  <Channel Number="1">Pan fine</Channel>
+  <Channel Number="2">Tilt</Channel>
+  <Channel Number="3">Tilt fine</Channel>
+  <Channel Number="4">Color Wheel</Channel>
+  <Channel Number="5">Gobo Wheel</Channel>
+  <Channel Number="6">Shutter</Channel>
+  <Channel Number="7">Master dimmer</Channel>
+  <Channel Number="8">Movement Speed</Channel>
+  <Channel Number="9">Multiple Functions</Channel>
+ </Mode>
+ <Physical>
+  <Bulb Type="LED" Lumens="0" ColourTemperature="0"/>
+  <Dimensions Weight="2.6" Width="150" Height="270" Depth="150"/>
+  <Lens Name="Other" DegreesMin="0" DegreesMax="0"/>
+  <Focus Type="Fixed" PanMax="13" TiltMax="13"/>
+  <Technical PowerConsumption="35" DmxConnector="3-pin"/>
+ </Physical>
+</FixtureDefinition>
