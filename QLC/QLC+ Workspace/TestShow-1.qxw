@@ -48,6 +48,17 @@
    <Address>0</Address>
    <Channels>10</Channels>
   </Fixture>
+  <FixtureGroup ID="0">
+   <Name>Compact Par 7 Tri - RGB Group</Name>
+   <Size X="2" Y="1"/>
+   <Head X="0" Y="0" Fixture="0">0</Head>
+   <Head X="1" Y="0" Fixture="1">0</Head>
+  </FixtureGroup>
+  <Function ID="0" Type="Scene" Name="No Strobe - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">4,4</FixtureVal>
+   <FixtureVal ID="0">4,4</FixtureVal>
+  </Function>
   <Function ID="1" Type="Chaser" Name="TestChaser1">
    <Speed FadeIn="0" FadeOut="0" Duration="1000"/>
    <Direction>Forward</Direction>
@@ -60,6 +71,11 @@
    <Track ID="0" Name="TestShow - Scene 1 " SceneID="4" isMute="0">
     <ShowFunction ID="5" StartTime="60" Duration="2000" Color="#556b80"/>
    </Track>
+  </Function>
+  <Function ID="3" Type="Scene" Name="Strobe 0-20 Hz - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">4,132</FixtureVal>
+   <FixtureVal ID="0">4,132</FixtureVal>
   </Function>
   <Function ID="4" Type="Scene" Name="Scene for TestShow - Track 1" Hidden="True">
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>
@@ -74,6 +90,498 @@
    <Step Number="0" FadeIn="0" Hold="1000" FadeOut="0" Values="16">0:0,255,1,255:1:0,255,1,255</Step>
    <Step Number="1" FadeIn="0" Hold="1000" FadeOut="0" Values="16">0:0,255,2,255:1:0,255,2,255</Step>
   </Function>
+  <Function ID="6" Type="Chaser" Name="Shutter macros chaser - Compact Par 7 Tri">
+   <Speed FadeIn="3000" FadeOut="0" Duration="10000"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <SpeedModes FadeIn="Common" FadeOut="Common" Duration="Common"/>
+   <Step Number="0" FadeIn="0" Hold="0" FadeOut="0">0</Step>
+   <Step Number="1" FadeIn="0" Hold="0" FadeOut="0">3</Step>
+  </Function>
+  <Function ID="7" Type="Scene" Name="No function - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">5,0</FixtureVal>
+   <FixtureVal ID="0">5,0</FixtureVal>
+  </Function>
+  <Function ID="8" Type="Scene" Name="29 static color prog via channel 2 - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">5,12</FixtureVal>
+   <FixtureVal ID="0">5,12</FixtureVal>
+  </Function>
+  <Function ID="9" Type="Scene" Name="Program 2 (7 color change) - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">5,37</FixtureVal>
+   <FixtureVal ID="0">5,37</FixtureVal>
+  </Function>
+  <Function ID="10" Type="Scene" Name="Program 3 (3 color change) - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">5,62</FixtureVal>
+   <FixtureVal ID="0">5,62</FixtureVal>
+  </Function>
+  <Function ID="11" Type="Scene" Name="Program 4 (7 color switch) - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">5,87</FixtureVal>
+   <FixtureVal ID="0">5,87</FixtureVal>
+  </Function>
+  <Function ID="12" Type="Scene" Name="Program 5 (3 color switch) - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">5,112</FixtureVal>
+   <FixtureVal ID="0">5,112</FixtureVal>
+  </Function>
+  <Function ID="13" Type="Scene" Name="Program 6 (fantasy change 1) - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">5,137</FixtureVal>
+   <FixtureVal ID="0">5,137</FixtureVal>
+  </Function>
+  <Function ID="14" Type="Scene" Name="Program 7 (fantasy change 2) - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">5,162</FixtureVal>
+   <FixtureVal ID="0">5,162</FixtureVal>
+  </Function>
+  <Function ID="15" Type="Scene" Name="Program 8 (Red gradual change) - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">5,187</FixtureVal>
+   <FixtureVal ID="0">5,187</FixtureVal>
+  </Function>
+  <Function ID="16" Type="Scene" Name="Program 9 (Green gradual change) - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">5,212</FixtureVal>
+   <FixtureVal ID="0">5,212</FixtureVal>
+  </Function>
+  <Function ID="17" Type="Scene" Name="Program 10 (Blue gradual change) - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">5,237</FixtureVal>
+   <FixtureVal ID="0">5,237</FixtureVal>
+  </Function>
+  <Function ID="18" Type="Scene" Name="Sound-controlled - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="1">5,252</FixtureVal>
+   <FixtureVal ID="0">5,252</FixtureVal>
+  </Function>
+  <Function ID="19" Type="Chaser" Name="Colour macros chaser - Compact Par 7 Tri">
+   <Speed FadeIn="3000" FadeOut="0" Duration="10000"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <SpeedModes FadeIn="Common" FadeOut="Common" Duration="Common"/>
+   <Step Number="0" FadeIn="0" Hold="0" FadeOut="0">7</Step>
+   <Step Number="1" FadeIn="0" Hold="0" FadeOut="0">8</Step>
+   <Step Number="2" FadeIn="0" Hold="0" FadeOut="0">9</Step>
+   <Step Number="3" FadeIn="0" Hold="0" FadeOut="0">10</Step>
+   <Step Number="4" FadeIn="0" Hold="0" FadeOut="0">11</Step>
+   <Step Number="5" FadeIn="0" Hold="0" FadeOut="0">12</Step>
+   <Step Number="6" FadeIn="0" Hold="0" FadeOut="0">13</Step>
+   <Step Number="7" FadeIn="0" Hold="0" FadeOut="0">14</Step>
+   <Step Number="8" FadeIn="0" Hold="0" FadeOut="0">15</Step>
+   <Step Number="9" FadeIn="0" Hold="0" FadeOut="0">16</Step>
+   <Step Number="10" FadeIn="0" Hold="0" FadeOut="0">17</Step>
+   <Step Number="11" FadeIn="0" Hold="0" FadeOut="0">18</Step>
+  </Function>
+  <Function ID="20" Type="Scene" Name="Red scene - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,255,1,255,2,0,3,0,4,0,5,0,6,0,7,0</FixtureVal>
+   <FixtureVal ID="1">0,255,1,255</FixtureVal>
+  </Function>
+  <Function ID="21" Type="Scene" Name="Green scene - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,255,1,0,2,255,3,0,4,0,5,0,6,0,7,0</FixtureVal>
+   <FixtureVal ID="1">0,255,1,0,2,255,3,0,4,0,5,0,6,0,7,0</FixtureVal>
+  </Function>
+  <Function ID="22" Type="Scene" Name="Blue scene - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,255,1,0,2,0,3,255,4,0,5,0,6,0,7,0</FixtureVal>
+   <FixtureVal ID="1">0,255,1,0,2,0,3,255,4,0,5,0,6,0,7,0</FixtureVal>
+  </Function>
+  <Function ID="23" Type="Chaser" Name="Primary colours chaser - Compact Par 7 Tri">
+   <Speed FadeIn="3000" FadeOut="0" Duration="10000"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <SpeedModes FadeIn="Common" FadeOut="Common" Duration="Common"/>
+   <Step Number="0" FadeIn="0" Hold="0" FadeOut="0">20</Step>
+   <Step Number="1" FadeIn="0" Hold="0" FadeOut="0">21</Step>
+   <Step Number="2" FadeIn="0" Hold="0" FadeOut="0">22</Step>
+  </Function>
+  <Function ID="24" Type="Scene" Name="Scene Black - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,0,2,0,3,0</FixtureVal>
+   <FixtureVal ID="1">1,0,2,0,3,0</FixtureVal>
+  </Function>
+  <Function ID="25" Type="Scene" Name="Scene Dark Blue - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,0,2,0,3,128</FixtureVal>
+   <FixtureVal ID="1">1,0,2,0,3,128</FixtureVal>
+  </Function>
+  <Function ID="26" Type="Scene" Name="Scene Blue - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,0,2,0,3,255</FixtureVal>
+   <FixtureVal ID="1">1,0,2,0,3,255</FixtureVal>
+  </Function>
+  <Function ID="27" Type="Scene" Name="Scene Dark Green - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,0,2,128,3,0</FixtureVal>
+   <FixtureVal ID="1">1,0,2,128,3,0</FixtureVal>
+  </Function>
+  <Function ID="28" Type="Scene" Name="Scene Dark Cyan - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,0,2,128,3,128</FixtureVal>
+   <FixtureVal ID="1">1,0,2,128,3,128</FixtureVal>
+  </Function>
+  <Function ID="29" Type="Scene" Name="Scene Green - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,0,2,255,3,0</FixtureVal>
+   <FixtureVal ID="1">1,0,2,255,3,0</FixtureVal>
+  </Function>
+  <Function ID="30" Type="Scene" Name="Scene Cyan - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,255,1,0,2,255,3,255</FixtureVal>
+   <FixtureVal ID="1">0,255,1,0,2,255,3,255,4,0,5,0,6,0,7,0</FixtureVal>
+  </Function>
+  <Function ID="31" Type="Scene" Name="Scene Dark Red - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,128,2,0,3,0</FixtureVal>
+   <FixtureVal ID="1">1,128,2,0,3,0</FixtureVal>
+  </Function>
+  <Function ID="32" Type="Scene" Name="Scene Dark Magenta - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,128,2,0,3,128</FixtureVal>
+   <FixtureVal ID="1">1,128,2,0,3,128</FixtureVal>
+  </Function>
+  <Function ID="33" Type="Scene" Name="Scene Dark Yellow - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,128,2,128,3,0</FixtureVal>
+   <FixtureVal ID="1">1,128,2,128,3,0</FixtureVal>
+  </Function>
+  <Function ID="34" Type="Scene" Name="Scene Dark Gray - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,128,2,128,3,128</FixtureVal>
+   <FixtureVal ID="1">1,128,2,128,3,128</FixtureVal>
+  </Function>
+  <Function ID="35" Type="Scene" Name="Scene Light Gray - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,192,2,192,3,192</FixtureVal>
+   <FixtureVal ID="1">1,192,2,192,3,192</FixtureVal>
+  </Function>
+  <Function ID="36" Type="Scene" Name="Scene Red - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,255,2,0,3,0</FixtureVal>
+   <FixtureVal ID="1">1,255,2,0,3,0</FixtureVal>
+  </Function>
+  <Function ID="37" Type="Scene" Name="Scene Magenta - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,255,2,0,3,255</FixtureVal>
+   <FixtureVal ID="1">1,255,2,0,3,255</FixtureVal>
+  </Function>
+  <Function ID="38" Type="Scene" Name="Scene Yellow - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,255,2,255,3,0</FixtureVal>
+   <FixtureVal ID="1">1,255,2,255,3,0</FixtureVal>
+  </Function>
+  <Function ID="39" Type="Scene" Name="Scene White - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">1,255,2,255,3,255</FixtureVal>
+   <FixtureVal ID="1">1,255,2,255,3,255</FixtureVal>
+  </Function>
+  <Function ID="40" Type="Chaser" Name="16 Colours chaser - Compact Par 7 Tri">
+   <Speed FadeIn="3000" FadeOut="0" Duration="10000"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <SpeedModes FadeIn="Common" FadeOut="Common" Duration="Common"/>
+   <Step Number="0" FadeIn="0" Hold="0" FadeOut="0">24</Step>
+   <Step Number="1" FadeIn="0" Hold="0" FadeOut="0">25</Step>
+   <Step Number="2" FadeIn="0" Hold="0" FadeOut="0">26</Step>
+   <Step Number="3" FadeIn="0" Hold="0" FadeOut="0">27</Step>
+   <Step Number="4" FadeIn="0" Hold="0" FadeOut="0">28</Step>
+   <Step Number="5" FadeIn="0" Hold="0" FadeOut="0">29</Step>
+   <Step Number="6" FadeIn="0" Hold="0" FadeOut="0">30</Step>
+   <Step Number="7" FadeIn="0" Hold="0" FadeOut="0">31</Step>
+   <Step Number="8" FadeIn="0" Hold="0" FadeOut="0">32</Step>
+   <Step Number="9" FadeIn="0" Hold="0" FadeOut="0">33</Step>
+   <Step Number="10" FadeIn="0" Hold="0" FadeOut="0">34</Step>
+   <Step Number="11" FadeIn="0" Hold="0" FadeOut="0">35</Step>
+   <Step Number="12" FadeIn="0" Hold="0" FadeOut="0">36</Step>
+   <Step Number="13" FadeIn="0" Hold="0" FadeOut="0">37</Step>
+   <Step Number="14" FadeIn="0" Hold="0" FadeOut="0">38</Step>
+   <Step Number="15" FadeIn="0" Hold="0" FadeOut="0">39</Step>
+  </Function>
+  <Function ID="41" Type="RGBMatrix" Name="Animation Balls - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Balls</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+   <Property Name="presetNumber" Value="5"/>
+  </Function>
+  <Function ID="42" Type="RGBMatrix" Name="Animation Balls (Colors) - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Balls (Colors)</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="43" Type="RGBMatrix" Name="Animation Circles - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Circles</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="44" Type="RGBMatrix" Name="Animation Even/Odd - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Even/Odd</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="45" Type="RGBMatrix" Name="Animation Fill - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Fill</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="46" Type="RGBMatrix" Name="Animation Fill From Center - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Fill From Center</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="47" Type="RGBMatrix" Name="Animation Fill Unfill - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Fill Unfill</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="48" Type="RGBMatrix" Name="Animation Fill Unfill From Center - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Fill Unfill From Center</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="49" Type="RGBMatrix" Name="Animation Fill Unfill Squares From Center - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Fill Unfill Squares From Center</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="50" Type="RGBMatrix" Name="Animation Gradient - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Gradient</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="51" Type="RGBMatrix" Name="Animation Noise - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Noise</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="52" Type="RGBMatrix" Name="Animation One By One - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">One By One</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="53" Type="RGBMatrix" Name="Animation Opposite - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Opposite</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="54" Type="RGBMatrix" Name="Animation Plasma - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Plasma</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="55" Type="RGBMatrix" Name="Animation Plasma (Colors) - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Plasma (Colors)</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="56" Type="RGBMatrix" Name="Animation Random Column - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Random Column</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="57" Type="RGBMatrix" Name="Animation Random Fill Column - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Random Fill Column</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="58" Type="RGBMatrix" Name="Animation Random Fill Row - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Random Fill Row</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="59" Type="RGBMatrix" Name="Animation Random Fill Single - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Random Fill Single</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="60" Type="RGBMatrix" Name="Animation Random Pixel Per Row - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Random Pixel Per Row</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="61" Type="RGBMatrix" Name="Animation Random Pixel Per Row Multicolor - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Random Pixel Per Row Multicolor</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="62" Type="RGBMatrix" Name="Animation Random Row - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Random Row</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="63" Type="RGBMatrix" Name="Animation Random Single - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Random Single</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="64" Type="RGBMatrix" Name="Animation Squares - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Squares</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="65" Type="RGBMatrix" Name="Animation Squares From Center - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Squares From Center</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="66" Type="RGBMatrix" Name="Animation 3D Starfield - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">3D Starfield</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="67" Type="RGBMatrix" Name="Animation Stripes - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Stripes</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="68" Type="RGBMatrix" Name="Animation Stripes From Center - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Stripes From Center</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="69" Type="RGBMatrix" Name="Animation Strobe - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Strobe</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="70" Type="RGBMatrix" Name="Animation Vertical fall - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Vertical fall</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
+  <Function ID="71" Type="RGBMatrix" Name="Animation Waves - Compact Par 7 Tri">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <Algorithm Type="Script">Waves</Algorithm>
+   <DimmerControl>1</DimmerControl>
+   <MonoColor>4294901760</MonoColor>
+   <FixtureGroup>0</FixtureGroup>
+  </Function>
  </Engine>
  <VirtualConsole>
   <Frame Caption="">
@@ -84,8 +592,8 @@
     <BackgroundImage>None</BackgroundImage>
     <Font>Default</Font>
    </Appearance>
-   <Button Caption="Button 0" ID="0" Icon="">
-    <WindowState Visible="False" X="0" Y="0" Width="50" Height="50"/>
+   <Button Caption="Animation Balls - Compact Par 7 Tri" ID="0" Icon="">
+    <WindowState Visible="False" X="0" Y="0" Width="225" Height="150"/>
     <Appearance>
      <FrameStyle>None</FrameStyle>
      <ForegroundColor>Default</ForegroundColor>
@@ -93,7 +601,20 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <Function ID="4294967295"/>
+    <Function ID="41"/>
+    <Action>Toggle</Action>
+    <Intensity Adjust="False">100</Intensity>
+   </Button>
+   <Button Caption="Primary colours chaser - Compact Par 7 Tri" ID="1" Icon="">
+    <WindowState Visible="False" X="350" Y="120" Width="365" Height="180"/>
+    <Appearance>
+     <FrameStyle>None</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Function ID="23"/>
     <Action>Toggle</Action>
     <Intensity Adjust="False">100</Intensity>
    </Button>

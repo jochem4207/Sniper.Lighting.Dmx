@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Workspace>
+<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="FunctionManager">
+ <Creator>
+  <Name>Q Light Controller Plus</Name>
+  <Version>4.12.2</Version>
+  <Author>joche</Author>
+ </Creator>
+ <Engine>
+  <InputOutputMap>
+   <Universe Name="Universe 1" ID="0">
+    <Input Plugin="DMX USB" Line="0"/>
+    <Output Plugin="DMX USB" Line="0">
+     <PluginParameters UniverseChannels="26"/>
+    </Output>
+   </Universe>
+   <Universe Name="Universe 2" ID="1"/>
+   <Universe Name="Universe 3" ID="2"/>
+   <Universe Name="Universe 4" ID="3"/>
+  </InputOutputMap>
+  <Fixture>
+   <Manufacturer>Ayra</Manufacturer>
+   <Model>Alo Micro Scan Led Scanner</Model>
+   <Mode>8CH</Mode>
+   <ID>0</ID>
+   <Name>Alo Micro Scan Led Scanner</Name>
+   <Universe>0</Universe>
+   <Address>0</Address>
+   <Channels>8</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Showtec</Manufacturer>
+   <Model>Compact Par 7 Tri</Model>
+   <Mode>8  Channel</Mode>
+   <ID>1</ID>
+   <Name>Compact Par 7 Tri #1</Name>
+   <Universe>0</Universe>
+   <Address>10</Address>
+   <Channels>8</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Showtec</Manufacturer>
+   <Model>Compact Par 7 Tri</Model>
+   <Mode>8  Channel</Mode>
+   <ID>2</ID>
+   <Name>Compact Par 7 Tri #2</Name>
+   <Universe>0</Universe>
+   <Address>18</Address>
+   <Channels>8</Channels>
+  </Fixture>
+  <ChannelsGroup ID="0" Name="Red TRI" Value="0">1,0,1,1,2,0,2,1</ChannelsGroup>
+  <ChannelsGroup ID="1" Name="Green TRI" Value="0">1,0,1,2,2,0,2,2</ChannelsGroup>
+  <ChannelsGroup ID="2" Name="Blue TRI" Value="0">1,0,1,3,2,0,2,3</ChannelsGroup>
+  <ChannelsGroup ID="3" Name="Strobe TRI" Value="0">1,0,1,4,2,0,2,4</ChannelsGroup>
+  <Function ID="1" Type="Scene" Name="Full Red">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <ChannelGroupsVal>0,255</ChannelGroupsVal>
+   <FixtureVal ID="1">0,255,1,255,4,0</FixtureVal>
+   <FixtureVal ID="2">0,255,1,255,2,0,3,0,4,0,5,0,6,0,7,0</FixtureVal>
+  </Function>
+  <Function ID="2" Type="Scene" Name="Full Blue">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <ChannelGroupsVal>2,255</ChannelGroupsVal>
+   <FixtureVal ID="1">0,255,1,0,2,0,3,255,4,0,5,0,6,0,7,0</FixtureVal>
+   <FixtureVal ID="2">0,255,1,0,2,0,3,255,4,0,5,0,6,0,7,0</FixtureVal>
+  </Function>
+  <Function ID="3" Type="Scene" Name="Full Green">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <ChannelGroupsVal>1,255</ChannelGroupsVal>
+   <FixtureVal ID="1">0,255,1,0,2,255,3,0,4,0,5,0,6,0,7,0</FixtureVal>
+   <FixtureVal ID="2">0,255,1,0,2,255,3,0,4,0,5,0,6,0,7,0</FixtureVal>
+  </Function>
+  <Function ID="4" Type="Scene" Name="Fast Green Strobe">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <ChannelGroupsVal>3,255</ChannelGroupsVal>
+   <FixtureVal ID="1">0,255,1,0,2,230,3,0,4,255</FixtureVal>
+   <FixtureVal ID="2">0,255,1,0,2,255,3,0,4,255</FixtureVal>
+  </Function>
+  <Function ID="5" Type="Audio" Name="The Expedition-27s.mp3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <RunOrder>SingleShot</RunOrder>
+   <Source>The Expedition-27s.mp3</Source>
+  </Function>
+  <Function ID="6" Type="Collection" Name="Full Song">
+   <Step Number="0">5</Step>
+   <Step Number="1">8</Step>
+  </Function>
+  <Function ID="7" Type="Chaser" Name="Intro Chaser">
+   <Speed FadeIn="0" FadeOut="0" Duration="400"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <SpeedModes FadeIn="Default" FadeOut="Default" Duration="Common"/>
+   <Step Number="0" FadeIn="0" Hold="0" FadeOut="4">2</Step>
+   <Step Number="1" FadeIn="0" Hold="0" FadeOut="0">3</Step>
+   <Step Number="2" FadeIn="0" Hold="400" FadeOut="4">2</Step>
+   <Step Number="3" FadeIn="0" Hold="400" FadeOut="0">3</Step>
+   <Step Number="4" FadeIn="0" Hold="400" FadeOut="4">2</Step>
+   <Step Number="5" FadeIn="0" Hold="400" FadeOut="0">3</Step>
+   <Step Number="6" FadeIn="0" Hold="400" FadeOut="4">2</Step>
+   <Step Number="7" FadeIn="0" Hold="400" FadeOut="0">3</Step>
+  </Function>
+  <Function ID="8" Type="Chaser" Name="2nd part chaser">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <SpeedModes FadeIn="Common" FadeOut="Common" Duration="PerStep"/>
+   <Step Number="0" FadeIn="0" Hold="400" FadeOut="0">3</Step>
+   <Step Number="1" FadeIn="0" Hold="1000" FadeOut="0">4</Step>
+   <Step Number="2" FadeIn="0" Hold="400" FadeOut="0">1</Step>
+   <Step Number="3" FadeIn="0" Hold="400" FadeOut="0">3</Step>
+   <Step Number="4" FadeIn="0" Hold="1000" FadeOut="0">4</Step>
+   <Step Number="5" FadeIn="0" Hold="400" FadeOut="0">1</Step>
+  </Function>
+  <Function ID="9" Type="Scene" Name="Blackout">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <ChannelGroupsVal>3,255</ChannelGroupsVal>
+   <FixtureVal ID="1">0,255,4,255,5,0,6,0,7,0</FixtureVal>
+   <FixtureVal ID="2">0,255,4,255,5,0,6,0,7,0</FixtureVal>
+  </Function>
+ </Engine>
+ <VirtualConsole>
+  <Frame Caption="">
+   <Appearance>
+    <FrameStyle>None</FrameStyle>
+    <ForegroundColor>Default</ForegroundColor>
+    <BackgroundColor>Default</BackgroundColor>
+    <BackgroundImage>None</BackgroundImage>
+    <Font>Default</Font>
+   </Appearance>
+   <Button Caption="Start The Expedition" ID="0" Icon="">
+    <WindowState Visible="False" X="75" Y="65" Width="260" Height="235"/>
+    <Appearance>
+     <FrameStyle>None</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Function ID="6"/>
+    <Action>Toggle</Action>
+    <Intensity Adjust="False">100</Intensity>
+   </Button>
+  </Frame>
+  <Properties>
+   <Size Width="1920" Height="1080"/>
+   <GrandMaster ChannelMode="Intensity" ValueMode="Reduce" SliderMode="Normal"/>
+  </Properties>
+ </VirtualConsole>
+ <SimpleDesk>
+  <Engine/>
+ </SimpleDesk>
+</Workspace>
