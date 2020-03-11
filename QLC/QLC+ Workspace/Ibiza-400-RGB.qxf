@@ -24,7 +24,7 @@
  <Channel Name="Strobe">
   <Group Byte="0">Shutter</Group>
   <Capability Min="0" Max="30">No Strobe</Capability>
-  <Capability Min="31" Max="255">8 grade speed (0-255) / 30  = 0 - 8 do </Capability>
+  <Capability Min="31" Max="255">8 grade speed (0-255) / 30 = 0 - 8 do</Capability>
  </Channel>
  <Channel Name="Pattern display">
   <Group Byte="0">Effect</Group>
@@ -45,7 +45,7 @@
   <Capability Min="1" Max="160">Manual</Capability>
   <Capability Min="161" Max="190">From down to up</Capability>
   <Capability Min="191" Max="220">From up to down</Capability>
-  <Capability Min="221" Max="255">Up and down in-phase move </Capability>
+  <Capability Min="221" Max="255">Up and down in-phase move</Capability>
  </Channel>
  <Channel Name="Zoom(+/-) pattern size">
   <Group Byte="0">Effect</Group>
@@ -102,9 +102,9 @@
  </Mode>
  <Physical>
   <Bulb Type="" Lumens="0" ColourTemperature="0"/>
-  <Dimensions Weight="2.2" Width="0" Height="0" Depth="0"/>
+  <Dimensions Weight="2.2" Width="210" Height="135" Depth="80"/>
   <Lens Name="Other" DegreesMin="0" DegreesMax="0"/>
   <Focus Type="Fixed" PanMax="0" TiltMax="0"/>
-  <Technical PowerConsumption="0" DmxConnector="5-pin"/>
+  <Technical PowerConsumption="25" DmxConnector="5-pin"/>
  </Physical>
 </FixtureDefinition>
