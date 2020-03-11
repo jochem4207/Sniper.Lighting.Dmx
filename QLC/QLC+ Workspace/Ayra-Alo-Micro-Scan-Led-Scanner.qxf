@@ -24,8 +24,26 @@
  </Channel>
  <Channel Name="Pan" Preset="PositionPan"/>
  <Channel Name="Tilt" Preset="PositionTilt"/>
- <Channel Name="Color Wheel" Preset="ColorWheel"/>
- <Channel Name="Gobo Wheel" Preset="GoboWheel"/>
+ <Channel Name="Gobo Wheel">
+  <Group Byte="0">Gobo</Group>
+  <Capability Min="0" Max="7">Open</Capability>
+  <Capability Min="8" Max="15">Gobo 1</Capability>
+  <Capability Min="16" Max="23">Gobo 2</Capability>
+  <Capability Min="24" Max="31">Gobo 3</Capability>
+  <Capability Min="32" Max="39">Gobo 4</Capability>
+  <Capability Min="40" Max="47">Gobo 5</Capability>
+  <Capability Min="48" Max="55">Gobo 6</Capability>
+  <Capability Min="56" Max="63">Gobo 7</Capability>
+  <Capability Min="64" Max="71">Open shake</Capability>
+  <Capability Min="72" Max="79">Gobo 1 shake</Capability>
+  <Capability Min="80" Max="87">Gobo 2 shake</Capability>
+  <Capability Min="88" Max="95">Gobo 3 shake</Capability>
+  <Capability Min="96" Max="103">Gobo 4 shake</Capability>
+  <Capability Min="104" Max="111">Gobo 5 shake</Capability>
+  <Capability Min="112" Max="119">Gobo 6 shake</Capability>
+  <Capability Min="120" Max="127">Gobo 7 shake</Capability>
+  <Capability Min="128" Max="255">Gobo scroll slow - fast</Capability>
+ </Channel>
  <Channel Name="Shutter">
   <Group Byte="1">Shutter</Group>
   <Capability Min="0" Max="7">Blackout</Capability>
@@ -53,13 +71,32 @@
  </Channel>
  <Channel Name="Pan fine" Preset="PositionPanFine"/>
  <Channel Name="Tilt fine" Preset="PositionTiltFine"/>
+ <Channel Name="Color wheel">
+  <Group Byte="0">Colour</Group>
+  <Capability Min="0" Max="7">Open White</Capability>
+  <Capability Min="8" Max="15">SPLC 1</Capability>
+  <Capability Min="16" Max="23">Red</Capability>
+  <Capability Min="24" Max="31">SPLC2</Capability>
+  <Capability Min="32" Max="39">Orange</Capability>
+  <Capability Min="40" Max="47">SPLC3</Capability>
+  <Capability Min="48" Max="55">Yellow</Capability>
+  <Capability Min="56" Max="63">SPLC4</Capability>
+  <Capability Min="64" Max="71">Green</Capability>
+  <Capability Min="72" Max="79">SPLC5</Capability>
+  <Capability Min="80" Max="87">Dark Blue</Capability>
+  <Capability Min="88" Max="95">SPLC6</Capability>
+  <Capability Min="96" Max="103">Light Blue</Capability>
+  <Capability Min="104" Max="111">SPLC7</Capability>
+  <Capability Min="112" Max="127">Magenta</Capability>
+  <Capability Min="128" Max="255">Rainbow effect, slow - fast</Capability>
+ </Channel>
  <Mode Name="1CH">
   <Channel Number="0">Sound-Controlled Show Mode</Channel>
  </Mode>
  <Mode Name="8CH">
   <Channel Number="0">Pan</Channel>
   <Channel Number="1">Tilt</Channel>
-  <Channel Number="2">Color Wheel</Channel>
+  <Channel Number="2">Color wheel</Channel>
   <Channel Number="3">Gobo Wheel</Channel>
   <Channel Number="4">Shutter</Channel>
   <Channel Number="5">Master dimmer</Channel>
@@ -71,7 +108,7 @@
   <Channel Number="1">Pan fine</Channel>
   <Channel Number="2">Tilt</Channel>
   <Channel Number="3">Tilt fine</Channel>
-  <Channel Number="4">Color Wheel</Channel>
+  <Channel Number="4">Color wheel</Channel>
   <Channel Number="5">Gobo Wheel</Channel>
   <Channel Number="6">Shutter</Channel>
   <Channel Number="7">Master dimmer</Channel>
@@ -82,7 +119,7 @@
   <Bulb Type="LED" Lumens="0" ColourTemperature="0"/>
   <Dimensions Weight="2.6" Width="150" Height="270" Depth="150"/>
   <Lens Name="Other" DegreesMin="0" DegreesMax="0"/>
-  <Focus Type="Fixed" PanMax="13" TiltMax="13"/>
+  <Focus Type="Fixed" PanMax="30" TiltMax="30"/>
   <Technical PowerConsumption="35" DmxConnector="3-pin"/>
  </Physical>
 </FixtureDefinition>

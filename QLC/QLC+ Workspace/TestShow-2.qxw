@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Workspace>
-<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="FunctionManager">
+<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="FixtureManager">
  <Creator>
   <Name>Q Light Controller Plus</Name>
   <Version>4.12.2</Version>
@@ -11,7 +11,7 @@
    <Universe Name="Universe 1" ID="0">
     <Input Plugin="DMX USB" Line="0"/>
     <Output Plugin="DMX USB" Line="0">
-     <PluginParameters UniverseChannels="26"/>
+     <PluginParameters UniverseChannels="39"/>
     </Output>
    </Universe>
    <Universe Name="Universe 2" ID="1"/>
@@ -47,6 +47,16 @@
    <Universe>0</Universe>
    <Address>18</Address>
    <Channels>8</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Ibiza</Manufacturer>
+   <Model>400 RGB</Model>
+   <Mode>13 CH</Mode>
+   <ID>3</ID>
+   <Name>400 RGB</Name>
+   <Universe>0</Universe>
+   <Address>26</Address>
+   <Channels>13</Channels>
   </Fixture>
   <FixtureGroup ID="0">
    <Name>Compact Par 7 Tri - RGB Group</Name>
@@ -431,8 +441,8 @@
    <MonoColor>4278212095</MonoColor>
    <FixtureGroup>0</FixtureGroup>
    <Property Name="tailfade" Value="Yes"/>
-   <Property Name="taillength" Value="50"/>
    <Property Name="direction" Value="Right"/>
+   <Property Name="taillength" Value="50"/>
   </Function>
   <Function ID="45" Type="Scene" Name="Compact Par 7 Tri - RGB Group" Hidden="True">
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>
@@ -470,6 +480,16 @@
     <Action>Toggle</Action>
     <Intensity Adjust="False">100</Intensity>
    </Button>
+   <AudioTriggers BarsNumber="16" Caption="" ID="1">
+    <WindowState Visible="False" X="445" Y="455" Width="300" Height="200"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+   </AudioTriggers>
   </Frame>
   <Properties>
    <Size Width="1920" Height="1080"/>
