@@ -15,8 +15,16 @@ End goals
   
 # Steps to go
 
+## New plan 
+- [ ] Get more knowledge about everything
+- [ ] Create a custom made show in QLC+
+- [ ] Learn how to mix a song in Traktor DJ
+
+
+Below is on hold.
+
 ## For the basic lightning
-- [x] Make a plan
+- [ ] Make a plan
 - [ ] Create a C# App (api, tbd) that can talk with QLC+
 - [ ] Create sequences in QLC+ to be called from the web api
 - [ ] Call and make basic show 
