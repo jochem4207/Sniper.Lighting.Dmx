@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Workspace>
+<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="InputOutputManager">
+ <Creator>
+  <Name>Q Light Controller Plus</Name>
+  <Version>4.12.2</Version>
+  <Author>joche</Author>
+ </Creator>
+ <Engine>
+  <InputOutputMap>
+   <Universe Name="Universe 1" ID="0">
+    <Input Plugin="DMX USB" Line="0"/>
+    <Output Plugin="DMX USB" Line="0">
+     <PluginParameters UniverseChannels="39"/>
+    </Output>
+   </Universe>
+   <Universe Name="Universe 2" ID="1"/>
+   <Universe Name="Universe 3" ID="2"/>
+   <Universe Name="Universe 4" ID="3"/>
+  </InputOutputMap>
+  <Fixture>
+   <Manufacturer>Ayra</Manufacturer>
+   <Model>Alo Micro Scan Led Scanner</Model>
+   <Mode>10CH</Mode>
+   <ID>0</ID>
+   <Name>Alo Micro Scan Led Scanner</Name>
+   <Universe>0</Universe>
+   <Address>0</Address>
+   <Channels>10</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Ibiza</Manufacturer>
+   <Model>400 RGB</Model>
+   <Mode>13 CH</Mode>
+   <ID>1</ID>
+   <Name>400 RGB</Name>
+   <Universe>0</Universe>
+   <Address>10</Address>
+   <Channels>13</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Showtec</Manufacturer>
+   <Model>Compact Par 7 Tri</Model>
+   <Mode>8  Channel</Mode>
+   <ID>2</ID>
+   <Name>Compact Par 7 Tri</Name>
+   <Universe>0</Universe>
+   <Address>31</Address>
+   <Channels>8</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Showtec</Manufacturer>
+   <Model>Compact Par 7 Tri</Model>
+   <Mode>8  Channel</Mode>
+   <ID>3</ID>
+   <Name>Compact Par 7 Tri</Name>
+   <Universe>0</Universe>
+   <Address>23</Address>
+   <Channels>8</Channels>
+  </Fixture>
+  <Function ID="0" Type="Show" Name="The Expedition">
+   <TimeDivision Type="BPM_4_4" BPM="155"/>
+   <Track ID="0" Name="Audio" isMute="0">
+    <ShowFunction ID="2" StartTime="0" Duration="27090" Color="#608053" Locked="1"/>
+   </Track>
+   <Track ID="1" Name="LED Scanner" SceneID="3" isMute="0"/>
+   <Track ID="2" Name="Test Scene Opening" SceneID="5" isMute="0">
+    <ShowFunction ID="6" StartTime="0" Duration="12000" Color="#556b80"/>
+   </Track>
+   <Track ID="3" Name="New Scene" SceneID="9" isMute="0">
+    <ShowFunction ID="14" StartTime="0" Duration="11200" Color="#556b80"/>
+   </Track>
+   <Track ID="4" Name="New Scene" SceneID="12" isMute="0"/>
+  </Function>
+  <Function ID="1" Type="Audio" Name="The Expedition-27s.mp3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <RunOrder>SingleShot</RunOrder>
+   <Source Device="PHL 328P6V (NVIDIA High Definition Audio)">The Expedition-27s.mp3</Source>
+  </Function>
+  <Function ID="2" Type="Audio" Name="The Expedition-27s.mp3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <RunOrder>SingleShot</RunOrder>
+   <Source Device="PHL 328P6V (NVIDIA High Definition Audio)">The Expedition-27s.mp3</Source>
+  </Function>
+  <Function ID="3" Type="Scene" Name="Scene for The Expedition - Track 2" Hidden="True">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0"/>
+  </Function>
+  <Function ID="4" Type="Sequence" Name="Opening" BoundScene="3">
+   <Speed FadeIn="1000" FadeOut="1500" Duration="6000"/>
+   <Direction>Forward</Direction>
+   <RunOrder>SingleShot</RunOrder>
+   <SpeedModes FadeIn="Common" FadeOut="Common" Duration="Common"/>
+   <Step Number="0" FadeIn="1000" Hold="0" FadeOut="0" Values="0"/>
+  </Function>
+  <Function ID="5" Type="Scene" Name="Test Scene Opening" Hidden="True">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="0">0,0,1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0</FixtureVal>
+  </Function>
+  <Function ID="6" Type="Sequence" Name="New Sequence 6" BoundScene="5">
+   <Speed FadeIn="4000" FadeOut="7000" Duration="12000"/>
+   <Direction>Forward</Direction>
+   <RunOrder>SingleShot</RunOrder>
+   <SpeedModes FadeIn="Common" FadeOut="Common" Duration="Common"/>
+   <Step Number="0" FadeIn="4000" Hold="8" FadeOut="0" Values="10">0:2,96,3,99,4,22,5,38,6,14,7,255,8,175</Step>
+  </Function>
+  <Function ID="7" Type="Scene" Name="New Scene" Hidden="True">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="2">1,0,2,0,3,0</FixtureVal>
+   <FixtureVal ID="3"/>
+  </Function>
+  <Function ID="8" Type="Sequence" Name="New Sequence 8" BoundScene="7">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <SpeedModes FadeIn="Default" FadeOut="Default" Duration="Common"/>
+  </Function>
+  <Function ID="9" Type="Scene" Name="New Scene" Hidden="True">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">0,0,1,0,2,0,3,0,4,0,5,0,6,0,7,0</FixtureVal>
+   <FixtureVal ID="2">0,0,1,0,2,0,3,0,4,0,5,0,6,0,7,0</FixtureVal>
+  </Function>
+  <Function ID="10" Type="Sequence" Name="Par Blink 100 ms" BoundScene="9">
+   <Speed FadeIn="0" FadeOut="0" Duration="100"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <SpeedModes FadeIn="Default" FadeOut="Default" Duration="Common"/>
+   <Step Number="0" FadeIn="0" Hold="0" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="1" FadeIn="0" Hold="300" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="2" FadeIn="0" Hold="75" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="3" FadeIn="0" Hold="75" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="4" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="5" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="6" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="7" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+  </Function>
+  <Function ID="11" Type="Sequence" Name="Par Blink 500 ms" BoundScene="12">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <SpeedModes FadeIn="Default" FadeOut="Default" Duration="Common"/>
+   <Step Number="0" FadeIn="0" Hold="0" FadeOut="0" Values="16">2:0,255,1,231,2,230,3,115:3:0,255,1,231,2,230,3,115</Step>
+   <Step Number="1" FadeIn="0" Hold="300" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="2" FadeIn="0" Hold="75" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="3" FadeIn="0" Hold="75" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="4" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="5" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="6" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="7" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+  </Function>
+  <Function ID="12" Type="Scene" Name="New Scene" Hidden="True">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="3">0,0,1,0,2,0,3,0,4,0,5,0,6,0,7,0</FixtureVal>
+   <FixtureVal ID="2">0,0,1,0,2,0,3,0,4,0,5,0,6,0,7,0</FixtureVal>
+  </Function>
+  <Function ID="13" Type="Sequence" Name="" BoundScene="3">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <Direction>Forward</Direction>
+   <RunOrder>SingleShot</RunOrder>
+   <SpeedModes FadeIn="Default" FadeOut="Default" Duration="Common"/>
+  </Function>
+  <Function ID="14" Type="Sequence" Name="Par Blink 100 ms (Copy)" BoundScene="9">
+   <Speed FadeIn="0" FadeOut="0" Duration="200"/>
+   <Direction>Forward</Direction>
+   <RunOrder>SingleShot</RunOrder>
+   <SpeedModes FadeIn="Default" FadeOut="Default" Duration="Common"/>
+   <Step Number="0" FadeIn="0" Hold="0" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="1" FadeIn="0" Hold="300" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="2" FadeIn="0" Hold="75" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="3" FadeIn="0" Hold="75" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="4" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="5" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="6" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="7" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="8" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="9" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="10" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="11" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="12" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="13" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="14" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="15" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="16" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="17" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="18" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="19" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="20" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="21" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="22" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="23" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="24" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="25" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="26" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="27" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="28" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="29" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="30" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="31" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="32" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="33" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="34" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="35" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="36" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="37" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="38" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="39" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="40" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="41" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="42" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="43" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="44" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="45" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="46" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="47" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="48" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="49" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="50" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="51" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="52" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="53" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="54" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="55" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+  </Function>
+  <Function ID="15" Type="Sequence" Name="Par Blink 500 ms (Copy)" BoundScene="12">
+   <Speed FadeIn="0" FadeOut="0" Duration="500"/>
+   <Direction>Forward</Direction>
+   <RunOrder>SingleShot</RunOrder>
+   <SpeedModes FadeIn="Default" FadeOut="Default" Duration="Common"/>
+   <Step Number="0" FadeIn="0" Hold="0" FadeOut="0" Values="16">2:0,255,1,231,2,230,3,115:3:0,255,1,231,2,230,3,115</Step>
+   <Step Number="1" FadeIn="0" Hold="300" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="2" FadeIn="0" Hold="75" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="3" FadeIn="0" Hold="75" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="4" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="5" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+   <Step Number="6" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
+   <Step Number="7" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
+  </Function>
+  <Monitor DisplayMode="1" ShowLabels="0">
+   <Font>Arial,12,-1,5,50,0,0,0,0,0</Font>
+   <ChannelStyle>0</ChannelStyle>
+   <ValueStyle>0</ValueStyle>
+   <Grid Width="5" Height="3" Depth="5" Units="0"/>
+   <FxItem ID="0" XPos="720" YPos="709.091"/>
+   <FxItem ID="1" XPos="1843.64" YPos="621.818"/>
+  </Monitor>
+ </Engine>
+ <VirtualConsole>
+  <Frame Caption="">
+   <Appearance>
+    <FrameStyle>None</FrameStyle>
+    <ForegroundColor>Default</ForegroundColor>
+    <BackgroundColor>Default</BackgroundColor>
+    <BackgroundImage>None</BackgroundImage>
+    <Font>Default</Font>
+   </Appearance>
+   <AudioTriggers BarsNumber="5" Caption="Test" ID="0">
+    <WindowState Visible="False" X="215" Y="125" Width="300" Height="200"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <SpectrumBar Name="#1 (0Hz - 1000Hz)" Type="2" MinThreshold="51" MaxThreshold="204" Divisor="1" Index="0" FunctionID="11"/>
+    <SpectrumBar Name="#2 (1000Hz - 2000Hz)" Type="2" MinThreshold="51" MaxThreshold="204" Divisor="1" Index="1" FunctionID="4"/>
+    <SpectrumBar Name="#3 (2000Hz - 3000Hz)" Type="2" MinThreshold="51" MaxThreshold="204" Divisor="1" Index="2" FunctionID="6"/>
+    <SpectrumBar Name="#4 (3000Hz - 4000Hz)" Type="2" MinThreshold="51" MaxThreshold="204" Divisor="1" Index="3" FunctionID="14"/>
+    <SpectrumBar Name="#5 (4000Hz - 5000Hz)" Type="2" MinThreshold="51" MaxThreshold="204" Divisor="1" Index="4" FunctionID="13"/>
+   </AudioTriggers>
+  </Frame>
+  <Properties>
+   <Size Width="1920" Height="1080"/>
+   <GrandMaster ChannelMode="Intensity" ValueMode="Reduce" SliderMode="Normal"/>
+  </Properties>
+ </VirtualConsole>
+ <SimpleDesk>
+  <Engine/>
+ </SimpleDesk>
+</Workspace>

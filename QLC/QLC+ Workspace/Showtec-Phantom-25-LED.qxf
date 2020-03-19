@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE FixtureDefinition>
+<FixtureDefinition xmlns="http://www.qlcplus.org/FixtureDefinition">
+ <Creator>
+  <Name>Q Light Controller Plus</Name>
+  <Version>4.12.2</Version>
+  <Author>Jochem</Author>
+ </Creator>
+ <Manufacturer>Showtec</Manufacturer>
+ <Model>Phantom 25 LED</Model>
+ <Type>Moving Head</Type>
+ <Channel Name="Pan" Preset="PositionPan"/>
+ <Channel Name="Tilt" Preset="PositionTilt"/>
+ <Channel Name="Pan Fine" Preset="PositionPanFine"/>
+ <Channel Name="Tilt Fine" Preset="PositionTiltFine"/>
+ <Channel Name="Pan/Tilt speed" Preset="SpeedPanTiltFastSlow"/>
+ <Channel Name="Colourwheel">
+  <Group Byte="0">Colour</Group>
+  <Capability Min="0" Max="5">White</Capability>
+  <Capability Min="6" Max="11">Yellow</Capability>
+  <Capability Min="12" Max="17">Pink</Capability>
+  <Capability Min="18" Max="23">Green</Capability>
+  <Capability Min="24" Max="29">Red</Capability>
+  <Capability Min="30" Max="35">Light Blue</Capability>
+  <Capability Min="36" Max="41">Orange</Capability>
+  <Capability Min="42" Max="47">Dark Blue</Capability>
+  <Capability Min="48" Max="53">Light Green</Capability>
+  <Capability Min="54" Max="63">Bright Red</Capability>
+  <Capability Min="64" Max="69">Split Color White / Yellow</Capability>
+  <Capability Min="70" Max="75">Split Color Yellow / Pink</Capability>
+  <Capability Min="76" Max="81">Split Color Pink / Green</Capability>
+  <Capability Min="82" Max="87">Split Color Green / Red</Capability>
+  <Capability Min="88" Max="93">Split Color Red / Light Blue</Capability>
+  <Capability Min="94" Max="99">Split Color Light Blue / Orange</Capability>
+  <Capability Min="100" Max="105">Split Color Orange / Dark Blue</Capability>
+  <Capability Min="106" Max="111">Split Color Dark Blue / Light Green</Capability>
+  <Capability Min="112" Max="117">Split Color Light Green / Bright Red</Capability>
+  <Capability Min="118" Max="127">Split Color Bright Red / White</Capability>
+  <Capability Min="128" Max="191">Clockwise roation (CW) rainbow effect from slow to fast</Capability>
+  <Capability Min="192" Max="255">Counter-clockwise  rotation (CCW) rainbow effect from slow to fast</Capability>
+ </Channel>
+ <Channel Name="Shutter / Strobe (Dimmer must be open)">
+  <Group Byte="0">Shutter</Group>
+  <Capability Min="0" Max="3">Close</Capability>
+  <Capability Min="4" Max="7">Shutter open</Capability>
+  <Capability Min="8" Max="215">Strobe effect, from slow to fast (0-10 flashes / sec)</Capability>
+  <Capability Min="216" Max="255">Shutter open</Capability>
+ </Channel>
+ <Channel Name="Master dimmer" Preset="IntensityMasterDimmer"/>
+ <Channel Name="Static Gobo-wheel + Shake">
+  <Group Byte="0">Gobo</Group>
+  <Capability Min="0" Max="5">Open / White</Capability>
+  <Capability Min="6" Max="11">Metal Gobo 1</Capability>
+  <Capability Min="12" Max="17">Metal Gobo 2</Capability>
+  <Capability Min="18" Max="23">Metal Gobo 3</Capability>
+  <Capability Min="24" Max="29">Metal Gobo 4</Capability>
+  <Capability Min="30" Max="35">Metal Gobo 5</Capability>
+  <Capability Min="36" Max="41">Metal Gobo 6</Capability>
+  <Capability Min="42" Max="47">Metal Gobo 7</Capability>
+  <Capability Min="48" Max="53">Metal Gobo 8</Capability>
+  <Capability Min="54" Max="63">Metal Gobo 9</Capability>
+  <Capability Min="64" Max="73">Gobo Shake 9 from slow to fast</Capability>
+  <Capability Min="74" Max="79">Gobo Shake 8 from slow to fast</Capability>
+  <Capability Min="80" Max="85">Gobo Shake 7 from slow to fast</Capability>
+  <Capability Min="86" Max="91">Gobo Shake 6 from slow to fast</Capability>
+  <Capability Min="92" Max="97">Gobo Shake 5 from slow to fast</Capability>
+  <Capability Min="98" Max="103">Gobo Shake 4 from slow to fast</Capability>
+  <Capability Min="104" Max="109">Gobo Shake 3 from slow to fast</Capability>
+  <Capability Min="110" Max="115">Gobo Shake 2 from slow to fast</Capability>
+  <Capability Min="116" Max="121">Gobo Shake 1 from slow to fast</Capability>
+  <Capability Min="122" Max="127">Open / White</Capability>
+  <Capability Min="128" Max="191">Clockwise rotation (CW) rainbow effect from slow to fast</Capability>
+  <Capability Min="192" Max="255">Counter-clockwise rotation (CCW) rainbow effect from slow to fast</Capability>
+ </Channel>
+ <Channel Name="Channel Functions">
+  <Group Byte="0">Nothing</Group>
+  <Capability Min="0" Max="7">No Function</Capability>
+  <Capability Min="8" Max="27">Blackout during Pan/Tilt movement</Capability>
+  <Capability Min="28" Max="47">Blackout during Gobowheel movement</Capability>
+  <Capability Min="48" Max="67">Disabled blackout during Pan/Tilt/Gobowheel movement</Capability>
+  <Capability Min="68" Max="87">Blackout during Colorwheel movement</Capability>
+  <Capability Min="88" Max="107">Disabled blackout during Pan/Tilt/Colorwheel movement</Capability>
+  <Capability Min="108" Max="127">Disabled blackout during Gobowheel/Colorwheel movement</Capability>
+  <Capability Min="128" Max="147">Disabled blackout during Pan/Tilt/Gobowheel/Colorwheel movement</Capability>
+  <Capability Min="148" Max="167">Reset Pan</Capability>
+  <Capability Min="168" Max="187">Reset Tilt</Capability>
+  <Capability Min="188" Max="207">Reset Colorwheel</Capability>
+  <Capability Min="208" Max="227">Reset Gobowheel</Capability>
+  <Capability Min="228" Max="247">Reset All channels</Capability>
+  <Capability Min="248" Max="255">No Function</Capability>
+ </Channel>
+ <Channel Name="Buiilt-in programs + sound-controlled programs">
+  <Group Byte="0">Intensity</Group>
+  <Capability Min="0" Max="7">No function</Capability>
+  <Capability Min="8" Max="23">Built-in Program 1</Capability>
+  <Capability Min="24" Max="39">Built-in Program 2</Capability>
+  <Capability Min="40" Max="55">Built-in Program 3</Capability>
+  <Capability Min="56" Max="71">Built-in Program 4</Capability>
+  <Capability Min="72" Max="87">Built-in Program 5</Capability>
+  <Capability Min="88" Max="103">Built-in Program 6</Capability>
+  <Capability Min="104" Max="119">Built-in Program 7</Capability>
+  <Capability Min="120" Max="135">Built-in Program 8</Capability>
+  <Capability Min="136" Max="151">Sound-controlled Program 1</Capability>
+  <Capability Min="152" Max="167">Sound-controlled Program 2</Capability>
+  <Capability Min="168" Max="183">Sound-controlled Program 3</Capability>
+  <Capability Min="184" Max="199">Sound-controlled Program 4</Capability>
+  <Capability Min="200" Max="215">Sound-controlled Program 5</Capability>
+  <Capability Min="216" Max="231">Sound-controlled Program 6</Capability>
+  <Capability Min="232" Max="247">Sound-controlled Program 7</Capability>
+  <Capability Min="248" Max="255">Sound-controlled Program 8</Capability>
+ </Channel>
+ <Mode Name="6CH">
+  <Channel Number="0">Pan</Channel>
+  <Channel Number="1">Tilt</Channel>
+  <Channel Number="2">Colourwheel</Channel>
+  <Channel Number="3">Shutter / Strobe (Dimmer must be open)</Channel>
+  <Channel Number="4">Master dimmer</Channel>
+  <Channel Number="5">Static Gobo-wheel + Shake</Channel>
+ </Mode>
+ <Mode Name="11CH">
+  <Channel Number="0">Pan</Channel>
+  <Channel Number="1">Tilt</Channel>
+  <Channel Number="2">Pan Fine</Channel>
+  <Channel Number="3">Tilt Fine</Channel>
+  <Channel Number="4">Pan/Tilt speed</Channel>
+  <Channel Number="5">Colourwheel</Channel>
+  <Channel Number="6">Shutter / Strobe (Dimmer must be open)</Channel>
+  <Channel Number="7">Master dimmer</Channel>
+  <Channel Number="8">Static Gobo-wheel + Shake</Channel>
+  <Channel Number="9">Channel Functions</Channel>
+  <Channel Number="10">Buiilt-in programs + sound-controlled programs</Channel>
+ </Mode>
+ <Physical>
+  <Bulb Type="LED" Lumens="0" ColourTemperature="0"/>
+  <Dimensions Weight="0" Width="205" Height="210" Depth="310"/>
+  <Lens Name="Other" DegreesMin="0" DegreesMax="0"/>
+  <Focus Type="Fixed" PanMax="540" TiltMax="540"/>
+  <Technical PowerConsumption="59" DmxConnector="5-pin"/>
+ </Physical>
+</FixtureDefinition>

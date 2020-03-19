@@ -18,8 +18,26 @@
  </Channel>
  <Channel Name="Pattern Selection">
   <Group Byte="0">Effect</Group>
-  <Capability Min="0" Max="34">Static pattern for manual control</Capability>
-  <Capability Min="35" Max="255">Dynamic Geometric pattern</Capability>
+  <Capability Min="2" Max="3">Horizontal Line</Capability>
+  <Capability Min="6" Max="7">Plus sign</Capability>
+  <Capability Min="8" Max="9">Box</Capability>
+  <Capability Min="10" Max="11">Diagonal Line (Left to Right)</Capability>
+  <Capability Min="12" Max="13">Diagonal Line (Right to Left)</Capability>
+  <Capability Min="14" Max="15">Wave</Capability>
+  <Capability Min="16" Max="17">Drawing (Moving)</Capability>
+  <Capability Min="18" Max="19">Triangle Upside Down</Capability>
+  <Capability Min="20" Max="21">2 Lines with distance Vertical</Capability>
+  <Capability Min="22" Max="23">2 Lines with distance Horizontal</Capability>
+  <Capability Min="24" Max="25">Triangle</Capability>
+  <Capability Min="26" Max="27">Big Circle</Capability>
+  <Capability Min="28" Max="29">Rectangle</Capability>
+  <Capability Min="30" Max="31">2 Lines with distance vertical - height difference</Capability>
+  <Capability Min="32" Max="33">2 Lines with distance horizontal - height difference</Capability>
+  <Capability Min="34" Max="35">Moving dots</Capability>
+  <Capability Min="36" Max="37">Horizontal Line going up and down</Capability>
+  <Capability Min="38" Max="39">Horizontal Line broken going up and down</Capability>
+  <Capability Min="40" Max="41">Moving dots going up and down</Capability>
+  <Capability Min="42" Max="255"></Capability>
  </Channel>
  <Channel Name="Strobe">
   <Group Byte="0">Shutter</Group>
