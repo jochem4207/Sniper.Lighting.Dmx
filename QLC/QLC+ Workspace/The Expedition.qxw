@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE Workspace>
-<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="InputOutputManager">
+<Workspace xmlns="http://www.qlcplus.org/Workspace" CurrentWindow="FunctionManager">
  <Creator>
   <Name>Q Light Controller Plus</Name>
   <Version>4.12.2</Version>
@@ -9,9 +9,9 @@
  <Engine>
   <InputOutputMap>
    <Universe Name="Universe 1" ID="0">
-    <Input Plugin="DMX USB" Line="0"/>
+    <Input Plugin="ArtNet" Line="6"/>
     <Output Plugin="DMX USB" Line="0">
-     <PluginParameters UniverseChannels="39"/>
+     <PluginParameters UniverseChannels="61"/>
     </Output>
    </Universe>
    <Universe Name="Universe 2" ID="1"/>
@@ -57,6 +57,26 @@
    <Universe>0</Universe>
    <Address>23</Address>
    <Channels>8</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Showtec</Manufacturer>
+   <Model>Phantom 25 LED</Model>
+   <Mode>11CH</Mode>
+   <ID>4</ID>
+   <Name>Phantom 25 LED #1</Name>
+   <Universe>0</Universe>
+   <Address>39</Address>
+   <Channels>11</Channels>
+  </Fixture>
+  <Fixture>
+   <Manufacturer>Showtec</Manufacturer>
+   <Model>Phantom 25 LED</Model>
+   <Mode>11CH</Mode>
+   <ID>5</ID>
+   <Name>Phantom 25 LED #2</Name>
+   <Universe>0</Universe>
+   <Address>50</Address>
+   <Channels>11</Channels>
   </Fixture>
   <Function ID="0" Type="Show" Name="The Expedition">
    <TimeDivision Type="BPM_4_4" BPM="155"/>
@@ -235,6 +255,30 @@
    <Step Number="6" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:0,255,2,230,3,115:3:0,255,2,230,3,115</Step>
    <Step Number="7" FadeIn="0" Hold="100" FadeOut="0" Values="16">2:2,230,3,115:3:2,230,3,115</Step>
   </Function>
+  <Function ID="16" Type="Scene" Name="Brightness" Hidden="True">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="2">0,0</FixtureVal>
+   <FixtureVal ID="3">0,0</FixtureVal>
+  </Function>
+  <Function ID="17" Type="Sequence" Name="Par 1 - Button test - Brightness" BoundScene="16">
+   <Speed FadeIn="0" FadeOut="0" Duration="5000"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <SpeedModes FadeIn="Default" FadeOut="Default" Duration="Common"/>
+   <Step Number="0" FadeIn="0" Hold="5000" FadeOut="0" Values="2">2:0,255:3:0,255</Step>
+  </Function>
+  <Function ID="18" Type="Sequence" Name="Par 1 - Button test - Red" BoundScene="19">
+   <Speed FadeIn="0" FadeOut="0" Duration="5000"/>
+   <Direction>Forward</Direction>
+   <RunOrder>Loop</RunOrder>
+   <SpeedModes FadeIn="Default" FadeOut="Default" Duration="Common"/>
+   <Step Number="0" FadeIn="0" Hold="5000" FadeOut="0" Values="2">2:1,255:3:1,255</Step>
+  </Function>
+  <Function ID="19" Type="Scene" Name="Red" Hidden="True">
+   <Speed FadeIn="0" FadeOut="0" Duration="0"/>
+   <FixtureVal ID="2">1,0</FixtureVal>
+   <FixtureVal ID="3">1,0</FixtureVal>
+  </Function>
   <Monitor DisplayMode="1" ShowLabels="0">
    <Font>Arial,12,-1,5,50,0,0,0,0,0</Font>
    <ChannelStyle>0</ChannelStyle>
@@ -253,8 +297,35 @@
     <BackgroundImage>None</BackgroundImage>
     <Font>Default</Font>
    </Appearance>
-   <AudioTriggers BarsNumber="5" Caption="Test" ID="0">
-    <WindowState Visible="False" X="215" Y="125" Width="300" Height="200"/>
+   <Button Caption="Button 0" ID="0" Icon="">
+    <WindowState Visible="False" X="430" Y="245" Width="115" Height="95"/>
+    <Appearance>
+     <FrameStyle>None</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Function ID="4294967295"/>
+    <Action>Toggle</Action>
+    <Intensity Adjust="False">100</Intensity>
+    <Input Universe="0" Channel="0"/>
+   </Button>
+   <Button Caption="Button 1" ID="1" Icon="">
+    <WindowState Visible="False" X="605" Y="405" Width="50" Height="50"/>
+    <Appearance>
+     <FrameStyle>None</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Function ID="4294967295"/>
+    <Action>Toggle</Action>
+    <Intensity Adjust="False">100</Intensity>
+   </Button>
+   <Slider Caption="Slider 2" ID="2" WidgetStyle="Slider" InvertedAppearance="false">
+    <WindowState Visible="False" X="100" Y="265" Width="60" Height="200"/>
     <Appearance>
      <FrameStyle>Sunken</FrameStyle>
      <ForegroundColor>Default</ForegroundColor>
@@ -262,12 +333,42 @@
      <BackgroundImage>None</BackgroundImage>
      <Font>Default</Font>
     </Appearance>
-    <SpectrumBar Name="#1 (0Hz - 1000Hz)" Type="2" MinThreshold="51" MaxThreshold="204" Divisor="1" Index="0" FunctionID="11"/>
-    <SpectrumBar Name="#2 (1000Hz - 2000Hz)" Type="2" MinThreshold="51" MaxThreshold="204" Divisor="1" Index="1" FunctionID="4"/>
-    <SpectrumBar Name="#3 (2000Hz - 3000Hz)" Type="2" MinThreshold="51" MaxThreshold="204" Divisor="1" Index="2" FunctionID="6"/>
-    <SpectrumBar Name="#4 (3000Hz - 4000Hz)" Type="2" MinThreshold="51" MaxThreshold="204" Divisor="1" Index="3" FunctionID="14"/>
-    <SpectrumBar Name="#5 (4000Hz - 5000Hz)" Type="2" MinThreshold="51" MaxThreshold="204" Divisor="1" Index="4" FunctionID="13"/>
-   </AudioTriggers>
+    <Input Universe="0" Channel="0"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>18</Function>
+    </Playback>
+   </Slider>
+   <Button Caption="Button 3" ID="3" Icon="">
+    <WindowState Visible="False" X="360" Y="410" Width="50" Height="50"/>
+    <Appearance>
+     <FrameStyle>None</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Function ID="4294967295"/>
+    <Action>Toggle</Action>
+    <Intensity Adjust="False">100</Intensity>
+   </Button>
+   <Slider Caption="Slider 9" ID="9" WidgetStyle="Slider" InvertedAppearance="false">
+    <WindowState Visible="False" X="175" Y="265" Width="60" Height="200"/>
+    <Appearance>
+     <FrameStyle>Sunken</FrameStyle>
+     <ForegroundColor>Default</ForegroundColor>
+     <BackgroundColor>Default</BackgroundColor>
+     <BackgroundImage>None</BackgroundImage>
+     <Font>Default</Font>
+    </Appearance>
+    <Input Universe="0" Channel="1"/>
+    <SliderMode ValueDisplayStyle="Exact" ClickAndGoType="None">Playback</SliderMode>
+    <Level LowLimit="0" HighLimit="255" Value="0"/>
+    <Playback>
+     <Function>17</Function>
+    </Playback>
+   </Slider>
   </Frame>
   <Properties>
    <Size Width="1920" Height="1080"/>
