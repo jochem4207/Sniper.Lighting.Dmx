@@ -6,33 +6,34 @@ To
 
 Using
 - hardware: Enttec dmx pro interface (MK1) 
-- software: QLC+ webapi (suggestion of the facebook group: https://www.facebook.com/groups/lightingtrainer/?fref=nf)
+- software: QLC+ / TouchDesigner
 
 End goals
 - Traktor pro 3 to <my open custom software> to dmx 
 - Document most steps so it can help people in the future
 - Make a video how to use
-  
+ 
+# Thanks to
+QLC+ (For the whole app ofc)
+The Artnetominator (Debugging)
+R3Crowderz (#music#)
+TouchDesigner (An very open, creative program to create everything you can imagine)
+The LD group on fb https://www.facebook.com/groups/lightingtrainer/?fref=nf
+
+# Setup
+QLC+ for fixture control
+Touchdesigner for analyzing music 
+Touchdesigner -> QLC (via DMX out, artnet, out of the box by these two programs)
+ 
 # Steps to go
 
 ## New plan 
-- [ ] Get more knowledge about everything
-- [ ] Create a custom made show in QLC+
-- [ ] Learn how to mix a song in Traktor DJ
-
-
-Below is on hold.
-
-## For the basic lightning
-- [ ] Make a plan
-- [ ] Create a C# App (api, tbd) that can talk with QLC+
-- [ ] Create sequences in QLC+ to be called from the web api
-- [ ] Call and make basic show 
+- [ ] Get more knowledge about everything (in progress)
+- [ ] Create a custom made show in QLC+ (in progress)
+- [ ] Learn how to mix a song in Traktor DJ (in progress)
 
 ## For the sound part
-- [ ] Test the sound functions of QLC+
-- [ ] If needed develop something as input for the C# App based on sound input 
-
+- [ ] Test the sound functions of QLC+ -> not working properly (sound analyze is minimal, QLC+ is for lightning, not music)
 
 # Sources used
 - [ ] https://www.qlcplus.org/tutorials.html to get a basic understanding of qlc+ 
@@ -47,7 +48,8 @@ Below is on hold.
 - Tried FreeStyler with Sound 2 dmx, is only sending random dmx signals, i need more control. Good stuff if you want random dmx.
 - Tried OLA (but hell, that stuff is old and hard to install on a ubuntu vm)
 - Tried a fork of this repo (https://github.com/neoxai/Sniper.Lighting.Dmx) couldn't get the example to work yet, didn't invest much time. I changed my mind to start working on the QLC+ example. Due this software is currently being maintained.
+- Tried Lightjams (didnt do much with it, touchdesigner is my goal now)
 
 # Stuff to look into 
-- OS2L 
-- Timecode 
+- OS2L (done, not promising for my purpose at this moment)
+- Timecode (done, maybe for someday)
