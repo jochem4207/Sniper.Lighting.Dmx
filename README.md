@@ -14,11 +14,11 @@ End goals
 - Make a video how to use
  
 # Thanks to
-QLC+ (For the whole app ofc)
-The Artnetominator (Debugging)
-R3Crowderz (#music#)
-TouchDesigner (An very open, creative program to create everything you can imagine)
-The LD group on fb https://www.facebook.com/groups/lightingtrainer/?fref=nf
+QLC+ (For the whole app ofc)    
+The Artnetominator (Debugging)    
+R3Crowderz (#music#)   
+TouchDesigner (An very open, creative program to create everything you can imagine)    
+The LD group on fb https://www.facebook.com/groups/lightingtrainer/?fref=nf    
 
 # Setup
 QLC+ for fixture control
