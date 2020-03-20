@@ -21,9 +21,9 @@ TouchDesigner (An very open, creative program to create everything you can imagi
 The LD group on fb https://www.facebook.com/groups/lightingtrainer/?fref=nf    
 
 # Setup
-QLC+ for fixture control
-Touchdesigner for analyzing music 
-Touchdesigner -> QLC (via DMX out, artnet, out of the box by these two programs)
+QLC+ for fixture control    
+Touchdesigner for analyzing music     
+Touchdesigner -> QLC (via DMX out, artnet, out of the box by these two programs)    
  
 # Steps to go
 - [ ] Audio processing on TouchDesigner 
