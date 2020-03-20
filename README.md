@@ -26,20 +26,22 @@ Touchdesigner for analyzing music
 Touchdesigner -> QLC (via DMX out, artnet, out of the box by these two programs)
  
 # Steps to go
-
-## New plan 
+- [ ] Audio processing on TouchDesigner 
+- [ ] Configuring scenes, chases in QLC+ for to be triggered on certain sound 
 - [ ] Get more knowledge about everything (in progress)
 - [ ] Create a custom made show in QLC+ (in progress)
 - [ ] Learn how to mix a song in Traktor DJ (in progress)
 
 ## For the sound part
-- [ ] Test the sound functions of QLC+ -> not working properly (sound analyze is minimal, QLC+ is for lightning, not music)
+- [X] Test the sound functions of QLC+ -> not working properly (sound analyze is minimal, QLC+ is for lightning, not music)
 
 # Sources used
-- [ ] https://www.qlcplus.org/tutorials.html to get a basic understanding of qlc+ 
+- [X] https://www.qlcplus.org/tutorials.html to get a basic understanding of qlc+ 
+- [X] Everything in History
 
 # Optional 
 - [ ] Create a plugin like this one for Traktor Pro 3 (https://github.com/VDJartnet/VDJartnet) idea came from (https://www.qlcplus.org/forum/viewtopic.php?f=30&t=12303)
+- [ ] Make a tutorial video once i've found my perfect setup
 
 # History
 - Tried this repo, didn't work, no signals were actually send (see https://github.com/agrath/Sniper.Lighting.Dmx/issues/4)
