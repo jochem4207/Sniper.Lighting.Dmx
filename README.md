@@ -9,7 +9,7 @@ Using
 - software: QLC+ / TouchDesigner
 
 End goals
-- Traktor pro 3 to <my open custom software> to dmx 
+- Traktor pro 3 to Any (free) software to dmx to create an awesome show
 - Document most steps so it can help people in the future
 - Make a video how to use
  
